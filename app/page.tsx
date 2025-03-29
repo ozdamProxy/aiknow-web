@@ -22,7 +22,7 @@ export default function Home() {
 
           <div className="flex flex-col flex-1  p-4 w-full md:w-1/2  gap-[19px] justify-center  my-[20dp] ">
             <h1 className="text-black text-3xl sm:text-4xl md:text-6xl lg:text-[63px] font-bold  ">The Fastest Way to Gain Life-Changing Knowledge</h1>
-            <p className="text-black text-xl font-light ">&ldquo;With I Know, absorb the best books in minutes and take action today.&rdquo;</p>
+            <p className="text-black text-xl font-light ">"With I Know, absorb the best books in minutes and take action today."</p>
             <button className="px-8 py-4 text-white  bg-[#F7C663] text-[20px] font-light max-w-[215px] inline-block rounded-lg  shadow-md hover:bg-yellow-500 transition">
               Get Started
             </button>
@@ -69,10 +69,11 @@ export default function Home() {
       { icon: "/home/marketing.svg", text: "Marketing & Sales" },
       { icon: "/home/sex.svg", text: "Sex & Relationships" },
       { icon: "/home/mindull.svg", text: "Mindfulness & Happiness" },
+
     ].map((item, i) => (
       <div key={i} className="flex-shrink-0 flex items-center px-4 py-2 text-black bg-[#FFFAF0] rounded-2xl">
         <span className="mr-2">
-          <Image src={item.icon} alt="Icon" width={20} height={20} />
+          <img src={item.icon} alt="Icon" className="w-5 h-5" />
         </span>
         {item.text}
       </div>
@@ -102,7 +103,7 @@ export default function Home() {
               <p className="text-white font-bold text-[16px]">Key Point 1</p>
               <p className="text-white text-[24px] font-bold">No one will know what you want unless you say it.</p>
               <p className="text-white text-[16px] font-light">
-              The Psychology of Money by Morgan Housel explores the complex relationship between people and money, offering timeless lessons on wealth, greed, and happiness. Through engaging stories and insights, the book reveals how emotions, behaviors, and life choices shape financial success. Whether you're a seasoned investor or just starting out, this book will transform how you think about money and decision-making.
+              The Psychology of Money by Morgan Housel explores the complex relationship between people and money, offering timeless lessons on wealth, greed, and happiness. Through engaging stories and insights, the book reveals how emotions, behaviors, and life choices shape financial success. Whether you’re a seasoned investor or just starting out, this book will transform how you think about money and decision-making.
               </p>
             </div>
           </div>
@@ -137,7 +138,7 @@ export default function Home() {
 
       <section className="relative w-full h-screen flex flex-col items-center lg:px-[170px] md:px-[20px] " > {/* h-screen ekran yüksekliği kadar */}
           <h3 className="text-4xl md:text-6xl font-bold mb-6 text-black">Grow Every Day</h3>
-          <p className="text-xl  max-w-2xl mb-8 font-light text-black text-center">Big goals can feel overwhelming, but growth doesn&apos;t have to be hard. Make self-improvement effortless and fun with daily challenges!</p>
+          <p className="text-xl  max-w-2xl mb-8 font-light text-black text-center">Big goals can feel overwhelming, but growth doesn’t have to be hard. Make self-improvement effortless and fun with daily challenges!</p>
 
       {/* <scrolll gelcek */}
 
@@ -161,7 +162,7 @@ export default function Home() {
       <section className="relative w-full min-h-screen flex flex-col items-center"> {/* h-screen yerine min-h-screen */}
         <div className="w-full max-w-[1728px] px-[20px] lg:px-[170px] md:px-[20px] flex flex-col  items-center">
           <h3 className="text-4xl md:text-6xl font-bold mb-6 text-black text-center">Smart Learning, Happy Users</h3>
-          <p className="text-xl max-w-2xl mb-8 font-light text-black text-center">Get key insights from top books in just 15 minutes&mdash;read or listen on the go.</p>
+          <p className="text-xl max-w-2xl mb-8 font-light text-black text-center">Get key insights from top books in just 15 minutes—read or listen on the go.</p>
 
           {/* Sabit boyutlu kartlar için container */}
           <div className="w-full overflow-x-auto pb-4"> {/* overflow ekledik */}

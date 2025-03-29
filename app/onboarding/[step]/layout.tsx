@@ -1,21 +1,21 @@
 "use client";
 
-import type { ReactNode } from 'react';
-import { useState } from "react";
-import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import ProgressBar from "@/components/onboarding/ProgressBar";
 import OnboardingHeader from "@/components/onboarding/OnboardingHeader";
-import componentsMap from "@/utils/onboardingMap";
+import { usePathname } from "next/navigation";
+import componentsMap from "@/utils/onboardingMap";  // Haritayı burada import ediyoruz
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import { OptionProvider } from "@/context/OptionContextType";
 
-interface LayoutProps {
-  children: ReactNode;
-}
+
 
 export default function RootLayout({
-  children,
-}: LayoutProps) {
+    children,
+  }: Readonly<{
+    children: React.ReactNode;
+  }>) {
 
     const pathname = usePathname();
     const showProgress = pathname === "/onboarding/1"; // Örnek: 1. adımdaysa göster
@@ -39,15 +39,7 @@ export default function RootLayout({
           transition={{ duration: 0.5 }} // Animasyon süresi
           className="flex-1"
         >
-          {StepComponent && (
-            <StepComponent 
-              isCommitted={isCommitted} 
-              setIsCommitted={setIsCommitted} 
-              title={title} 
-              options={options} 
-              step={step}
-            />
-          )}
+          <StepComponent isCommitted={isCommitted} setIsCommitted={setIsCommitted} title={title} options={options} step={step}/>
         </motion.div>
       <div className="flex-1">{children}</div>
     </div>
