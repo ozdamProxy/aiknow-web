@@ -7,11 +7,10 @@ import ContinueButton from "./ContinueButton";
 
 interface OptionProps {
   title: string;
-  options: string[];
   step: string;
 }
 
-const LearningGoal: React.FC<OptionProps> = ({ title, options, step }) => {
+const LearningGoal = ({ title, step }: OptionProps): JSX.Element => {
   const router = useRouter();  
   const numbers = Array.from({ length: 10 }, (_, i) => i + 1); // 1-10 arası sayılar
   const containerRef = useRef<HTMLDivElement>(null);

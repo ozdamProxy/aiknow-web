@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useOptionContext } from "@/context/OptionContextType";
-import { log } from "console";
 
 interface OptionProps {
   title: string;
@@ -11,10 +10,10 @@ interface OptionProps {
   step: string;
 }
 
-const Habit: React.FC<OptionProps> = ({ title, options, step }) => {
+const Habit = ({ title, options, step }: OptionProps): JSX.Element => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
-  const { selectedHabit, setHabit, selectedBecome, setBecome } = useOptionContext();
+  const { setHabit, setBecome } = useOptionContext();
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);

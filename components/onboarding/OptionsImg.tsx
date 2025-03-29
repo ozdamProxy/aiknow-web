@@ -7,11 +7,10 @@ import ideasList from "@/utils/ideasList";
 
 interface OptionProps {
   title: string;
-  options: string[];
   step: string;
 }
 
-const OptionsImg: React.FC<OptionProps> = ({ title, options, step }) => {
+const OptionsImg = ({ title, step }: OptionProps): JSX.Element => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
   
