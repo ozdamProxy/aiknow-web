@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 type ProgressBarProps = {
   step: string;
@@ -9,8 +9,6 @@ type ProgressBarProps = {
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ step }) => {
   const step_ = parseInt(step);
-
-
   const [progress1, setProgress1] = useState("0%");
   const [progress2, setProgress2] = useState("0%");
   const [progress3, setProgress3] = useState("0%");
@@ -21,12 +19,10 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ step }) => {
   };
 
   useEffect(() => {
-   
-
     setProgress1(getProgressWidth(2, 4));
     setProgress2(getProgressWidth(5, 16));
     setProgress3(getProgressWidth(17, 21));
-  }, [step]);
+  }, [step, getProgressWidth]);
 
   return (
     <div className="items-center justify-center flex w-full px-[15px] sm:px-[40px] mt-[20px]">

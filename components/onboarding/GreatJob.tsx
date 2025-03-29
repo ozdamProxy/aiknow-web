@@ -1,19 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation"
-import ContinueButton from "./ContinueButton";
+import { useRouter } from "next/navigation";
 
 interface OptionProps {
   title: string;
   options: string[];
-  step:string
+  step: string;
 }
 
-const GreatJob:React.FC<OptionProps> = ({title,options,step}) => {
-
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);  
+const GreatJob: React.FC<OptionProps> = ({ title, options, step }) => {
   const router = useRouter();  
 
   const handleOptionClick = () => {
@@ -28,7 +24,7 @@ const GreatJob:React.FC<OptionProps> = ({title,options,step}) => {
         <p className="text-sm text-black font-semibold  text-center mb-[25px]">You unlocked the Star Shooter achievement for aiming high and siting your goals</p> 
         <p className="text-sm text-black font-normal text-center mb-[10px] max-w-[350px] text-start">
         {step === "8"
-          ? "We’ll help you develop it with our features" 
+          ? "We'll help you develop it with our features" 
           : step === "10"
           ? "It can be a title, a characteristic, or definition that motivates you" 
           : ""}

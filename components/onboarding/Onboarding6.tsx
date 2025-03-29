@@ -1,16 +1,14 @@
 "use client";
 import Image from "next/image"; 
 import ContinueButton from "./ContinueButton";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Onboarding6() {
+  const router = useRouter();
 
-    const router = useRouter();
-
-    const handleNextStep = () => {
-        router.push(`/onboarding/8`)
-      };
+  const handleNextStep = () => {
+    router.push(`/onboarding/8`);
+  };
 
   return (
     <div className="w-full my-[18px] items-center justify-items-center mt-[40px] h-full bg-[#FFFAF0]">

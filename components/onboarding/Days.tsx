@@ -1,24 +1,19 @@
 "use client";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
-import ContinueButton from "./ContinueButton";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface OptionProps {
-    title: string;
-    options: string[];
-    step:string
-  }
+  title: string;
+  options: string[];
+  step: string;
+}
 
-  const Days:React.FC<OptionProps> = ({title,options,step}) => {
+const Days: React.FC<OptionProps> = ({ title, options, step }) => {
+  const router = useRouter();
 
-    const router = useRouter();
-
-    const handleNextStep = () => {
-        router.push(`/onboarding/${parseInt(step) + 1}`); 
-    };
- 
+  const handleNextStep = () => {
+    router.push(`/onboarding/${parseInt(step) + 1}`); 
+  };
 
   return (
     <div className="w-full mt-[70px] items-center justify-items-center ">

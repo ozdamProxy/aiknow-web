@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image"; 
 import ContinueButton from "./ContinueButton";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Onboarding5() {
-
     const router = useRouter();
 
     const handleNextStep = () => {

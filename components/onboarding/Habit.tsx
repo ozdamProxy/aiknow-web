@@ -1,22 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
 import { useOptionContext } from "@/context/OptionContextType";
 import { log } from "console";
 
 interface OptionProps {
   title: string;
   options: string[];
-  step:string
+  step: string;
 }
 
-const Habit:React.FC<OptionProps> = ({title,options,step}) => {
-
+const Habit: React.FC<OptionProps> = ({ title, options, step }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
   const { selectedHabit, setHabit, selectedBecome, setBecome } = useOptionContext();
-
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
@@ -38,7 +36,7 @@ const Habit:React.FC<OptionProps> = ({title,options,step}) => {
         <h3 className="text-2xl text-black font-semibold leading-[37px] text-center mb-[25px]">{title}</h3> 
         <p className="text-sm text-black font-normal text-center mb-[10px] max-w-[350px] text-start">
         {step === "8"
-          ? "We’ll help you develop it with our features" 
+          ? "We'll help you develop it with our features" 
           : step === "10"
           ? "It can be a title, a characteristic, or definition that motivates you" 
           : ""}

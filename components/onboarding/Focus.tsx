@@ -1,33 +1,25 @@
 "use client";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
-import ContinueButton from "./ContinueButton";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-
-
 export default function Focus() {
+  const router = useRouter();
 
-    const [step, setStep] = useState(1);
-    const router = useRouter();
-
-    const handleNextStep = () => {
-      console.log(`${step}`)
-      router.push(`/onboarding/2`)
-    };
+  const handleNextStep = () => {
+    router.push(`/onboarding/2`);
+  };
  
-    const images = [
-        "/onboarding/fame_2.svg",
-        "/onboarding/fame_3.png",
-        "/onboarding/fame_5.svg",
-        "/onboarding/fame_5.svg", 
-        "/onboarding/fame_6.svg", 
-        "/onboarding/fame_7.svg", 
-        "/onboarding/fame_5.svg", 
-        "/onboarding/fame_9.svg", 
-        "/onboarding/fame_2.svg",
-      ];
+  const images = [
+    "/onboarding/fame_2.svg",
+    "/onboarding/fame_3.png",
+    "/onboarding/fame_5.svg",
+    "/onboarding/fame_5.svg", 
+    "/onboarding/fame_6.svg", 
+    "/onboarding/fame_7.svg", 
+    "/onboarding/fame_5.svg", 
+    "/onboarding/fame_9.svg", 
+    "/onboarding/fame_2.svg",
+  ];
 
   return (
     <div className="w-full mt-[70px] items-center justify-items-center ">
