@@ -1,18 +1,16 @@
 "use client";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useOptionContext } from "@/context/OptionContextType";
 
 interface OptionProps {
   isCommitted: boolean;
   setIsCommitted: (value: boolean) => void; 
-  title: string;
-  options: string[];
   step: string;
 }
 
-const CommitmentPact: React.FC<OptionProps> = ({ isCommitted, setIsCommitted, title, options, step }) => {
+const CommitmentPact: React.FC<OptionProps> = ({ isCommitted, setIsCommitted, step }: OptionProps) => {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const router = useRouter();
   const { selectedHabit, selectedBecome } = useOptionContext();
@@ -53,7 +51,7 @@ const CommitmentPact: React.FC<OptionProps> = ({ isCommitted, setIsCommitted, ti
             I commit to my goals.
             <br />
             <br />
-            And I trust "I Know" to guide me along the way and help me accomplish all my resolutions.
+            And I trust &quot;I Know&quot; to guide me along the way and help me accomplish all my resolutions.
           </p>
         </div>
 
