@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 const PaymentInfo = () => {
   const paymentData = [
@@ -55,7 +56,20 @@ const PaymentInfo = () => {
       items: [
         {
           label: 'Policies',
-          value: 'The service is governed by the following policies:\nhttps://www.ikbook.app/termsofcondition\nhttps://www.ikbook.app/privacypolicy',
+          value: (
+            <div>
+              The service is governed by the following policies:
+              <div className="mt-2 space-y-1">
+                <Link href="https://www.ikbook.app/termsofcondition" className="text-blue-600 hover:underline">
+                  Terms of Service
+                </Link>
+                <br />
+                <Link href="https://www.ikbook.app/privacypolicy" className="text-blue-600 hover:underline">
+                  Privacy Policy
+                </Link>
+              </div>
+            </div>
+          ),
         },
       ],
     },
