@@ -55,7 +55,7 @@ const PaymentInfo = () => {
       items: [
         {
           label: 'Policies',
-          value: 'The service is governed by the following policies:\n[Terms of Service URL]\n[Privacy Policy URL]',
+          value: 'The service is governed by the following policies:\nhttps://www.ikbook.app/termsofcondition\nhttps://www.ikbook.app/privacypolicy',
         },
       ],
     },
