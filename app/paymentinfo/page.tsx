@@ -6,13 +6,13 @@ import Link from 'next/link';
 const PaymentInfo = () => {
   const paymentData = [
     {
-      title: 'Seller Information',
+      title: '【Commercial Disclosure】',
       items: [
-        { label: 'Company Name', value: 'Proxy Code Inc.' },
+        { label: 'Seller Information', value: 'Proxy Code Inc.' },
         { label: 'Responsible Officer', value: 'Ranmaru Yamamoto' },
         { label: 'Address', value: '1-18-18 Hamadayama, Suginami-ku, Tokyo, Japan' },
         { label: 'Phone Number', value: '(+81) 080-4873-8989' },
-        { label: 'Email Address', value: 'yamamoto@proxycode.jp' },
+        { label: 'Mail Address', value: 'yamamoto@proxycode.jp' },
       ],
     },
     {
@@ -25,17 +25,24 @@ const PaymentInfo = () => {
       ],
     },
     {
+      title: 'Additional Fees',
+      items: [
+        { label: 'Fees', value: 'There are no additional fees as this is a digital content service.' },
+      ],
+    },
+    {
       title: 'Pricing & Payment',
       items: [
         { label: 'Pricing', value: 'The pricing details for each plan are listed on the respective plan pages.' },
         { label: 'Payment Methods', value: 'Credit Card (VISA / MasterCard / JCB / AMEX)' },
-        { label: 'Payment Timing', value: 'Monthly & Annual Subscription Plans: Charged immediately upon subscription and auto-renewed thereafter.' },
-        { label: 'Number of Purchases Allowed', value: 'Each user is entitled to one account per purchase.' },
-        { label: 'Service Availability', value: 'The service will be available immediately after payment is completed.' },
+        { label: 'Payment Processing Time', value: 'Credit card payments are processed immediately.' },
+        { label: 'Payment Timing', value: 'Monthly & Annual Subscription Plans:\nCharged immediately upon subscription and auto-renewed thereafter.' },
+        { label: 'Purchase Limit', value: 'Each user is entitled to one account per purchase.' },
+        { label: 'Delivery Time', value: 'The service will be available immediately after payment is completed.' },
       ],
     },
     {
-      title: 'Refunds & Cancellations',
+      title: 'Refund Policy',
       items: [
         {
           label: 'General Policy',
@@ -43,11 +50,16 @@ const PaymentInfo = () => {
         },
         {
           label: 'Exceptions',
-          value: 'Exceptions will be made under the following conditions:\n- A major service malfunction or operational issue occurs.\n- Duplicate payments are made.\nFor refund inquiries, please contact customer support.',
+          value: 'However, exceptions will be made under the following conditions:\n\nA major service malfunction or operational issue occurs.\n\nDuplicate payments are made.\n\nFor refund inquiries, please contact customer support.',
         },
+      ],
+    },
+    {
+      title: 'Subscription Cancellation',
+      items: [
         {
-          label: 'Subscription Cancellation',
-          value: 'Monthly and annual plans are automatically renewed. To cancel a subscription, users must complete the cancellation process through the account settings page before the next renewal date. The service will remain accessible until the end of the current billing cycle after cancellation.',
+          label: 'Policy',
+          value: 'Monthly and annual plans are automatically renewed.\n\nTo cancel a subscription, users must complete the cancellation process through the account settings page before the next renewal date.\n\nThe service will remain accessible until the end of the current billing cycle after cancellation.',
         },
       ],
     },
