@@ -280,7 +280,7 @@ export default function Home() {
                 <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Help Center</a></li>
                 <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Terms of Service</a></li>
                 <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Cookie Policy</a></li>
-                <li><a href="https://www.ikbook.com/paymentinfo" className="text-gray-600 hover:text-gray-900 transition">Commercial Disclosure</a></li>
+                <li><a href="/paymentinfo" className="text-gray-600 hover:text-gray-900 transition">Commercial Disclosure</a></li>
               </ul>
             </div>
 
