@@ -8,11 +8,8 @@ const PaymentInfo = () => {
     {
       title: '【Commercial Disclosure】',
       items: [
-        { label: 'Seller Information', value: 'Proxy Code Inc.' },
-        { label: 'Responsible Officer', value: 'Ranmaru Yamamoto' },
-        { label: 'Address', value: '1-18-18 Hamadayama, Suginami-ku, Tokyo, Japan' },
-        { label: 'Phone Number', value: '(+81) 080-4873-8989' },
-        { label: 'Mail Address', value: 'yamamoto@proxycode.jp' },
+        { label: 'Seller Information', value: 'Proksi Yazilim Inc.' },
+        { label: 'Email Address', value: 'support@ikbook.app' },
       ],
     },
     {
@@ -31,26 +28,47 @@ const PaymentInfo = () => {
       ],
     },
     {
-      title: 'Pricing & Payment',
+      title: 'Pricing',
       items: [
-        { label: 'Pricing', value: 'The pricing details for each plan are listed on the respective plan pages.' },
-        { label: 'Payment Methods', value: 'Credit Card (VISA / MasterCard / JCB / AMEX)' },
-        { label: 'Payment Processing Time', value: 'Credit card payments are processed immediately.' },
-        { label: 'Payment Timing', value: 'Monthly & Annual Subscription Plans:\nCharged immediately upon subscription and auto-renewed thereafter.' },
-        { label: 'Purchase Limit', value: 'Each user is entitled to one account per purchase.' },
-        { label: 'Delivery Time', value: 'The service will be available immediately after payment is completed.' },
+        { label: 'Details', value: 'The pricing details for each plan are listed on the respective plan pages.' },
+      ],
+    },
+    {
+      title: 'Payment Methods',
+      items: [
+        { label: 'Methods', value: 'Credit Card (VISA / MasterCard / JCB / AMEX)' },
+      ],
+    },
+    {
+      title: 'Payment Processing Time',
+      items: [
+        { label: 'Processing', value: 'Credit card payments are processed immediately.' },
+      ],
+    },
+    {
+      title: 'Payment Timing',
+      items: [
+        { label: 'Timing', value: 'Monthly & Annual Subscription Plans:\nCharged immediately upon subscription and auto-renewed thereafter.' },
+      ],
+    },
+    {
+      title: 'Purchase Limit',
+      items: [
+        { label: 'Limit', value: 'Each user is entitled to one account per purchase.' },
+      ],
+    },
+    {
+      title: 'Delivery Time',
+      items: [
+        { label: 'Delivery', value: 'The service will be available immediately after payment is completed.' },
       ],
     },
     {
       title: 'Refund Policy',
       items: [
         {
-          label: 'General Policy',
-          value: 'As this is a digital service, refunds and cancellations are not supported after purchase.',
-        },
-        {
-          label: 'Exceptions',
-          value: 'However, exceptions will be made under the following conditions:\n\nA major service malfunction or operational issue occurs.\n\nDuplicate payments are made.\n\nFor refund inquiries, please contact customer support.',
+          label: 'Policy',
+          value: 'As this is a digital service, refunds and cancellations are not supported after purchase.\n\nHowever, exceptions will be made under the following conditions:\n\nA major service malfunction or operational issue occurs.\n\nDuplicate payments are made.\n\nFor refund inquiries, please contact customer support.',
         },
       ],
     },
@@ -58,7 +76,7 @@ const PaymentInfo = () => {
       title: 'Subscription Cancellation',
       items: [
         {
-          label: 'Policy',
+          label: 'Cancellation',
           value: 'Monthly and annual plans are automatically renewed.\n\nTo cancel a subscription, users must complete the cancellation process through the account settings page before the next renewal date.\n\nThe service will remain accessible until the end of the current billing cycle after cancellation.',
         },
       ],
