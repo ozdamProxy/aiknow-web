@@ -6,7 +6,7 @@ interface OptionProps {
   title: string;
   options: string[];
   step:string;
-  type:String
+  type: string;
 }
 
 const Options:React.FC<OptionProps> = ({title,options,step,type}) => {
@@ -31,7 +31,7 @@ const Options:React.FC<OptionProps> = ({title,options,step,type}) => {
           <p className="text-[14px] lg:text-[20px]  min-w-[300px] text-black font-normal text-center mb-[10px] lg:min-w-[430px] px-[15px] py-[10px] bg-[#FEBE5826] rounded-[30px] border border-[#FEBE58]">
           {step === "9"
             ? "What habit you want to create?" 
-            : "We’ll help you develop it with our features"
+            : "We'll help you develop it with our features"
             }
 
           </p>

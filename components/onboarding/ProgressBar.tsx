@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 type ProgressBarProps = {
   step: string;

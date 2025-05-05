@@ -17,7 +17,6 @@ interface OptionProps {
 
     const timerRef = useRef<NodeJS.Timeout | null>(null);
     const router = useRouter();
-    const [isPressing, setIsPressing] = useState(false); // uzun basılıp basılmadığını takip etmek için
     const { selectedHabit, selectedBecome } = useOptionContext();
 
     console.log(`selected habit ${selectedHabit} become ${selectedBecome}`)
@@ -27,7 +26,6 @@ interface OptionProps {
     };
 
     const handleLongPressStart = () => {
-        setIsPressing(true); // uzun basma başladığında, isPressing'i true yapıyoruz
         timerRef.current = setTimeout(() => {
           setIsCommitted(true); // committed durumunu başlatıyoruz
           setTimeout(() => {

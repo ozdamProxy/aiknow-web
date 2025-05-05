@@ -4,7 +4,6 @@ import ProgressBar from "@/components/onboarding/ProgressBar";
 import OnboardingHeader from "@/components/onboarding/OnboardingHeader";
 import { usePathname } from "next/navigation";
 import componentsMap from "@/utils/onboardingMap";  // Haritayı burada import ediyoruz
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { OptionProvider } from "@/context/OptionContextType";
@@ -20,7 +19,6 @@ export default function RootLayout({
   }>) {
 
     const pathname = usePathname();
-    const showProgress = pathname === "/onboarding/1"; // Örnek: 1. adımdaysa göster
 
     const step = pathname.split("/").pop() || "1"; // Eğer step undefined ise varsayılan olarak "1" kullan
     const { component: StepComponent, title, options,type } = componentsMap[step] || {};
