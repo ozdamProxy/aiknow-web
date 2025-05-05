@@ -1,5 +1,4 @@
 "use client";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
 import ContinueButton from "./ContinueButton";
 import { useState } from "react";
@@ -9,7 +8,7 @@ import { useRouter } from "next/navigation";
 
 export default function Focus() {
 
-    const [step, setStep] = useState(1);
+    const [step] = useState(1);
     const router = useRouter();
 
     const handleNextStep = () => {

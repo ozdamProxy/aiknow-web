@@ -13,7 +13,7 @@ interface OptionProps {
     step:string
   }
   
-    const ComitmentPact:React.FC<OptionProps> = ({isCommitted, setIsCommitted,title,options,step}) => {
+    const ComitmentPact:React.FC<Omit<OptionProps, 'title' | 'options'>> = ({isCommitted, setIsCommitted, step}) => {
 
     const timerRef = useRef<NodeJS.Timeout | null>(null);
     const router = useRouter();
@@ -61,7 +61,7 @@ interface OptionProps {
                 I commit to my goals.
                 <br />
                 <br />
-                And I trust “I Know” to guide me along the way and help me accomplish all my resolutions.
+                And I trust "I Know" to guide me along the way and help me accomplish all my resolutions.
               </p>
             </div>
     

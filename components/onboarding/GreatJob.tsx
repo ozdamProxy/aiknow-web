@@ -11,9 +11,8 @@ interface OptionProps {
   step:string
 }
 
-const GreatJob:React.FC<OptionProps> = ({title,options,step}) => {
+const GreatJob:React.FC<Pick<OptionProps, 'step'>> = ({step}) => {
 
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
 
   const handleOptionClick = () => {
@@ -29,7 +28,7 @@ const GreatJob:React.FC<OptionProps> = ({title,options,step}) => {
         <p className="text-[18px] sm:text-[20px] font-normal text-black sm:font-semibold  text-center mb-[25px] px-[10px]">You unlocked the Star Shooter achievement for aiming high and siting your goals</p> 
         <p className="text-sm text-black font-normal text-center mb-[10px] max-w-[350px] text-start">
         {step === "8"
-          ? "We’ll help you develop it with our features" 
+          ? "We'll help you develop it with our features" 
           : step === "10"
           ? "It can be a title, a characteristic, or definition that motivates you" 
           : ""}

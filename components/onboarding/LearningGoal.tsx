@@ -11,10 +11,12 @@ interface OptionProps {
   step:string
 }
 
-const LearningGoal:React.FC<OptionProps> = ({title,options,step}) => {
+const LearningGoal:React.FC<Omit<OptionProps, 'options'>> = ({title, step}) => {
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
+
+  const numbers = Array.from({ length: 10 }, (_, i) => i + 1); // 1-10 arası sayılar
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +32,8 @@ const LearningGoal:React.FC<OptionProps> = ({title,options,step}) => {
     const container = containerRef.current;
     container?.addEventListener("scroll", handleScroll);
     return () => container?.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [numbers.length]);
 
-  const numbers = Array.from({ length: 10 }, (_, i) => i + 1); // 1-10 arası sayılar
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(2);
 

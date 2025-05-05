@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation"
 import Image from "next/image";
 import goalsList from "@/utils/goalMap";
-import ContinueButton from "./ContinueButton";
 
 interface OptionProps {
   title: string;
@@ -12,7 +11,7 @@ interface OptionProps {
   step:string
 }
 
-const CheckBox:React.FC<OptionProps> = ({title,options,step}) => {
+const CheckBox:React.FC<Pick<OptionProps, 'step'>> = ({step}) => {
 
 
   const router = useRouter();  
