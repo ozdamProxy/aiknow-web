@@ -1,6 +1,8 @@
 "use client";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import ContinueButton from "./ContinueButton";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface OptionProps {
@@ -9,7 +11,7 @@ interface OptionProps {
     step:string
   }
 
-const Days:React.FC<Pick<OptionProps, 'step'>> = ({step}) => {
+  const Days:React.FC<OptionProps> = ({title,options,step}) => {
 
     const router = useRouter();
 

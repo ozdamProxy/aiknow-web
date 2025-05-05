@@ -1,4 +1,5 @@
 "use client";
+import { log } from "console";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
@@ -13,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     console.log("pathname:", pathname);
     console.log("isOnboarding:", isOnboarding);
-  }, [pathname, isOnboarding]);
+  }, [pathname]);
 
   
   return (
@@ -117,7 +118,7 @@ export default function Home() {
               <p className="text-white font-bold text-[16px]">Key Point 1</p>
               <p className="text-white text-[24px] font-bold">No one will know what you want unless you say it.</p>
               <p className="text-white text-[16px] font-light">
-              The Psychology of Money by Morgan Housel explores the complex relationship between people and money, offering timeless lessons on wealth, greed, and happiness. Through engaging stories and insights, the book reveals how emotions, behaviors, and life choices shape financial success. Whether you're a seasoned investor or just starting out, this book will transform how you think about money and decision-making.
+              The Psychology of Money by Morgan Housel explores the complex relationship between people and money, offering timeless lessons on wealth, greed, and happiness. Through engaging stories and insights, the book reveals how emotions, behaviors, and life choices shape financial success. Whether you’re a seasoned investor or just starting out, this book will transform how you think about money and decision-making.
               </p>
             </div>
           </div>
@@ -152,7 +153,7 @@ export default function Home() {
 
       <section className="relative w-full h-screen flex flex-col items-center lg:px-[170px] md:px-[20px] " > {/* h-screen ekran yüksekliği kadar */}
           <h3 className="text-4xl md:text-6xl font-bold mb-6 text-black">Grow Every Day</h3>
-          <p className="text-xl  max-w-2xl mb-8 font-light text-black text-center">Big goals can feel overwhelming, but growth doesn't have to be hard. Make self-improvement effortless and fun with daily challenges!</p>
+          <p className="text-xl  max-w-2xl mb-8 font-light text-black text-center">Big goals can feel overwhelming, but growth doesn’t have to be hard. Make self-improvement effortless and fun with daily challenges!</p>
 
       {/* <scrolll gelcek */}
 
