@@ -27,25 +27,23 @@ const OptionsImg:React.FC<OptionProps> = ({title,options,step}) => {
   return (
   
     <div className="w-full mt-[70px] items-center justify-items-center">
-    <h3 className="text-2xl text-black font-semibold leading-[37px] text-center">{title}</h3> 
-    <div className="space-y-4 w-[350px] py-4 mt-[30px]"> 
+    <h3 className="lg:text-[40px] text-[24px] text-black font-medium leading-[37px] text-center mb-[10px] sm:mb-[25px]">Like Time</h3> 
+    <h6 className="text-[18px] sm:text-[24px] text-black font-medium lg:font-semibold leading-[37px] text-center">{title}</h6> 
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4 mt-5">
     {ideasList.map((item, index) => ( 
         <button
           key={index}
-          className={`w-full py-2 text-sm flex items-center gap-3 text-start ps-[15px] font-normal text-black bg-[#F3F3F3] border border-[#AEAEAE] rounded-lg transition-all duration-300
-            ${selectedOption === item.title ? 'bg-[#FFF6E6] border-[#F7C663]' : ''} 
-            hover:border-[#F7C663] hover:bg-[#FFF6E6]`
-          }  
+          className={` lg:min-w-[430px] min-w-[310px]
+            w-full py-4 text-center text-sm lg:text-xl font-medium text-black px-[10px]
+            border-2 border-[#F7C663] rounded-lg transition-all duration-300
+            ${selectedOption === item.title ? 'bg-[#FFFFFF]' : ''}
+            hover:bg-[#F7C663] hover:border-[#F7C663]
+             ${index === ideasList.length - 1 && ideasList.length % 2 !== 0 ? 
+          'sm:col-span-2 sm:mx-auto sm:w-1/2' : ''}
+          `}
           onClick={() => handleOptionClick(item.title)}
         >
-            <Image
-            src={item.img}
-            alt={`Image_thumb`}
-            width={24}
-            height={24}
-            objectFit="cover"
-            className="rounded-lg "
-            />
+          
           {item.title}
         </button>
       ))}

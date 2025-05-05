@@ -47,10 +47,11 @@ interface OptionProps {
         <div className="relative w-full h-screen ">
           {/* Normal İçerik */}
           <div className={`pt-[20px] transition-opacity duration-700 items-center flex flex-col flex-col justify-center ${isCommitted ? "opacity-0" : "opacity-100"}`}>
-            <h3 className="text-xl text-black font-semibold leading-[37px] text-center mb-[30px]">
-              Commitment pact
-            </h3>
-            <div className="bg-[#F3F3F3] border border-[#AEAEAE] rounded-lg p-[20px] w-[350px]">
+          <h3 className="text-2xl text-black font-semibold leading-[37px] text-center mb-[10px] sm:mb-[25px]">Aspiration</h3> 
+            <p className="text-[20px] text-black font-semibold leading-[37px] text-center mb-[25px]">
+            Commitment pact
+            </p> 
+            <div className="bg-[#FEBE5826] border border-[#F7C663] rounded-lg p-[20px] w-[350px]">
               <p className="text-black font-normal text-sm">
                 I want to <span className="font-bold">{selectedHabit}</span> every day by learning{" "}
                 <span className="font-bold">7 summaries per week,</span> helping me become a{" "}
@@ -67,11 +68,11 @@ interface OptionProps {
             <Image src="/onboarding/top-.svg" alt="Image_sum" width={350} height={50} className="rounded-lg mt-[20px]" />
             <div className="w-[350px] flex items-center justify-center">
             <Image
-              src="/onboarding/print.svg"
+              src="/onboarding/commit_btn.svg"
               alt="Image_sum"
-              width={73}
-              height={73}
-              className="rounded-lg mt-[20px] cursor-pointer"
+              width={273}
+              height={273}
+              className="rounded-lg mt-[0px] sm:mt-[20px] cursor-pointer"
               onMouseDown={handleLongPressStart}
               onTouchStart={handleLongPressStart}
               onMouseUp={handleLongPressEnd}
@@ -83,8 +84,15 @@ interface OptionProps {
     
           {/* Committed Ekranı */}
           {isCommitted && (
-            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-[#F7C663] transition-all duration-700">
-              <p className="text-xl font-bold text-black animate-pulse">Yay, Committed!</p>
+            <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-[#F7C663] transition-all duration-700">
+                <Image
+                  src="/onboarding/reading_glass.svg"
+                  alt="Image_sum"
+                  width={330}
+                  height={235}
+                  className="rounded-lg mt-[0px] sm:mt-[20px]"
+                />
+              <p className="text-xl font-bold text-black animate-pulse">Yes Committed!</p>
             </div>
           )}
         </div>

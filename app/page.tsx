@@ -1,10 +1,26 @@
+"use client";
+import { log } from "console";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+
+
 
 export default function Home() {
+
+  const pathname = usePathname();
+  const isOnboarding = pathname.startsWith("/onboarding");
+
+  useEffect(() => {
+    console.log("pathname:", pathname);
+    console.log("isOnboarding:", isOnboarding);
+  }, [pathname]);
+
+  
   return (
   <div className="flex flex-col max-w-[1728px]  items-center justify-center min-h-screen w-full mx-auto overflow-x-hidden font-[family-name:var(--font-geist-sans)]">
      
-     <header className="pt-[30px]">
+     <header className={`pt-[30px] ${isOnboarding ? "bg-[#898989]" : ""}`}>
       <Image
             src="/logo.svg"
             alt="Next.js logo"
@@ -15,7 +31,6 @@ export default function Home() {
      </header>
 
      <main className="flex flex-col gap-8 items-center w-full lg:mt-[100px] md:mt-[30px]">
-
 
 
       <section className="flex flex-col md:flex-row  gap-4 w-full min-h-[auto] h-auto px-[20px]">
@@ -103,7 +118,7 @@ export default function Home() {
               <p className="text-white font-bold text-[16px]">Key Point 1</p>
               <p className="text-white text-[24px] font-bold">No one will know what you want unless you say it.</p>
               <p className="text-white text-[16px] font-light">
-              The Psychology of Money by Morgan Housel explores the complex relationship between people and money, offering timeless lessons on wealth, greed, and happiness. Through engaging stories and insights, the book reveals how emotions, behaviors, and life choices shape financial success. Whether you're a seasoned investor or just starting out, this book will transform how you think about money and decision-making.
+              The Psychology of Money by Morgan Housel explores the complex relationship between people and money, offering timeless lessons on wealth, greed, and happiness. Through engaging stories and insights, the book reveals how emotions, behaviors, and life choices shape financial success. Whether you’re a seasoned investor or just starting out, this book will transform how you think about money and decision-making.
               </p>
             </div>
           </div>
@@ -138,7 +153,7 @@ export default function Home() {
 
       <section className="relative w-full h-screen flex flex-col items-center lg:px-[170px] md:px-[20px] " > {/* h-screen ekran yüksekliği kadar */}
           <h3 className="text-4xl md:text-6xl font-bold mb-6 text-black">Grow Every Day</h3>
-          <p className="text-xl  max-w-2xl mb-8 font-light text-black text-center">Big goals can feel overwhelming, but growth doesn't have to be hard. Make self-improvement effortless and fun with daily challenges!</p>
+          <p className="text-xl  max-w-2xl mb-8 font-light text-black text-center">Big goals can feel overwhelming, but growth doesn’t have to be hard. Make self-improvement effortless and fun with daily challenges!</p>
 
       {/* <scrolll gelcek */}
 
@@ -280,7 +295,6 @@ export default function Home() {
                 <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Help Center</a></li>
                 <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Terms of Service</a></li>
                 <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Cookie Policy</a></li>
-                <li><a href="/paymentinfo" className="text-gray-600 hover:text-gray-900 transition">Commercial Disclosure</a></li>
               </ul>
             </div>
 

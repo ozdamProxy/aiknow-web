@@ -23,53 +23,55 @@ interface OptionProps {
   return (
     <div className="w-full mt-[70px] items-center justify-items-center  ">
 
-        <h3 className="text-[20px] text-black font-semibold text-center">Do you relate to this statement?</h3>
+        <h3 className="text-2xl text-black font-semibold leading-[37px] text-center mb-[10px] sm:mb-[25px]">Like Time</h3> 
+
+        <h3 className="sm:text-[20px] text-[18px] text-black font-regular  sm:font-medium text-center">Do you relate to this statement?</h3>
         <div
-            className={`flex flex-col  border border-[#AEAEAE] rounded-lg max-w-[480px] mx-[15px] p-[20px] mt-[30px] gap-3
-                ${step === "17" ? "bg-[#BDE4FF]" : 
-                step === "18" ? "bg-[#FFB98A]" : 
-                step === "19" ? "bg-[#6CEABC]" : "bg-white"}`}
+            className={`flex min-w-[320px] bg-[#FEBE5826] sm:max-w-[540px] rounded-lg mx-[15px] p-[20px] mt-[30px] gap-3 border border-[#F7C663]
+                `}
         >
              <Image
-                        src={`/onboarding/nail_${step}.svg`}
+                        src={`/onboarding/star__.svg`}
                         alt={`Image_`}
-                        width={21}
-                        height={28}
-                        objectFit="cover"
-                        className={`rounded-lg 
-                            ${step === "17" ? " #0099FF" : ""}
-                            ${step === "18" ? "#FF88330" : ""}
-                            ${step === "19" ? "#03BB77" : ""}`}
+                        width={36}
+                        height={36}
                       />
-            <p className="text-black text-[22px] font-normal">{title}</p>
+            <p className="text-black lg:text-[28px] text-[20px] font-normal  text-center">{title}</p>
+            <Image
+                        src={`/onboarding/star__.svg`}
+                        alt={`Image_`}
+                        width={36}
+                        height={36}
+                      />
         </div>
-        <p className="text-black text-sm font-normal my-[30px] text-center px-[15px]">Notification will help you stay on track and push you to achieve your goals</p>
 
-        <div className="flex items-center justify-center gap-3">
-            <div className="flex-col flex gap-2 items-center justify-center w-[150px] bg-[#F3F3F3] py-[10px] border border-[#AEAEAE] rounded-lg"
+        <div className="flex items-center justify-center gap-3 mt-[40px]">
+
+            <div className="flex-col flex  duration-300 gap-2 cursor-pointer hover:bg-[#FFF6E6] items-center justify-center w-[150px] bg-[#E6E6E629] py-[10px] border border-[#F7C663] rounded-lg"
+                onClick={()=>handleNextStep()}>
+                    <Image
+                    src={`/onboarding/yes.svg`}
+                    alt={`Image_`}
+                    width={49}
+                    height={49}
+                    objectFit="cover"
+                />
+                <p className="font-semibold text-[20px] text-black">Yes</p>
+            </div>
+
+            <div className="flex-col flex  hover:bg-[#FFF6E6]  gap-2 items-center justify-center w-[150px] py-[10px] bg-[#E6E6E629] border border-[#F7C663] rounded-lg"
             onClick={()=>handleNextStep()}>
             <Image
-                src={`/onboarding/Close_S.svg`}
+                src={`/onboarding/no.svg`}
                 alt={`Image_`}
-                width={33}
-                height={24}
+                width={49}
+                height={49}
                 objectFit="cover"
             />
             <p className="font-semibold text-[20px] text-black">No</p>
             </div>
-            <div className="flex-col flex gap-2 items-center justify-center w-[150px] py-[10px] bg-[#F3F3F3] border border-[#AEAEAE] rounded-lg"
-            onClick={()=>handleNextStep()}>
-            <Image
-                src={`/onboarding/Check.svg`}
-                alt={`Image_`}
-                width={33}
-                height={24}
-                objectFit="cover"
-            />
-            <p className="font-semibold text-[20px] text-black">Yes</p>
-            </div>
-
         </div>
+
     </div>
   );
 }

@@ -46,11 +46,10 @@ const LearningGoal:React.FC<OptionProps> = ({title,options,step}) => {
   
       <div className="w-full items-center justify-items-center mt-[50px]">
         <h3 className="text-2xl text-black font-semibold leading-[37px] text-center mb-[25px]">{title}</h3> 
-        <p className="text-sm text-black font-normal text-center mb-[10px] max-w-[350px] text-start">
-        Small steps will help you achieve it faster
+        <p className="text-[14px]  lg:text-[20px]  text-black font-normal text-center mb-[10px] w-[330px] lg:w-[430px] px-[15px] py-[10px] bg-[#FEBE5826] rounded-[30px] border border-[#FEBE58]">
+            Small steps will help you achieve it faster
         </p>
-       
-        <div className="space-y-4 w-[350px] py-4 mt-[20px] flex items-center"> 
+        <div className="space-y-4 w-[350px] py-4 mt-[20px] flex items-center justify-center border border-[2px] border-[#F7C663] rounded-[30px]"> 
            <Image
                 src="/onboarding/summaries.svg"
                 alt={`Image_sum`}

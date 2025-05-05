@@ -13,25 +13,24 @@ export default function Onboarding6() {
       };
 
   return (
-    <div className="w-full my-[18px] items-center justify-items-center mt-[40px] h-full bg-[#FFFAF0]">
+    <div className="w-full my-[18px] items-center justify-items-center mt-[40px] h-full ">
 
                 <Image
-                src="/onboarding/listen2.svg"
+                src="/onboarding/listen_msc.svg"
                 alt="Next.js logo"
-                width={300}
-                height={400}
+                width={327}
+                height={327}
                 priority
+                className="sm:w-[421px] sm:h-[421px]  mx-auto
+                lg:mt-[30px] sm:mt-[20px] z-40"
                 />
 
-        <h3 className="text-xl text-black font-semibold  text-center">And you can grow on the go by listening to audio summaries</h3>
+        <h3 className="text-[14px] sm:text-xl mx-[15px] text-black font-semibold  text-center">And you can grow on the go by listening to audio summaries</h3>
 
         <ContinueButton onClick={handleNextStep} /> 
          
 
-   
-
-        
-       
+  
     </div>
   );
 }

@@ -13,33 +13,39 @@ import GreatJob from "@/components/onboarding/GreatJob";
 import OptionsImg from "@/components/onboarding/OptionsImg";
 import Days from "@/components/onboarding/Days";
 import Statement from "@/components/onboarding/Statement";
+import Paywall from "@/components/onboarding/Paywall"
 
 interface StepInfo {
   component: ComponentType<any>;  // Bileşen tipi
   title: string;
   options: string[];
+  type:string
 }
 
 const componentsMap: Record<string, StepInfo> = {
   "1": {
     component: Focus,
     title: "Step 1: Focus",
-    options: ["Option 1", "Option 2", "Option 3"]
+    options: ["Option 1", "Option 2", "Option 3"],
+    type:"About you"
   },
   "2": {
     component: Option,
     title: "What is your focus right now?",
-    options: ["Practice self-discipline & consistency", "Develop my career skills", "Broaden my knowledge","Understand myself & others better","I don’t relate to any of these"]
+    options: ["Practice self-discipline & consistency", "Develop my career skills", "Broaden my knowledge","Understand myself & others better","I don’t relate to any of these"],
+    type:"About you"
   },
   "3": {
     component: Option,
     title: "Select Your Gender",
-    options: ["Male", "Female", "Other"]
+    options: ["Male", "Female", "Other"],
+    type:"About you"
   },
   "4": {
     component: Option,
     title: "What’s your age?",
-    options: ["18-24", "25-34", "35-44","45-54","55+"]
+    options: ["18-24", "25-34", "35-44","45-54","55+"],
+    type:"About you"
   },
   "5": {
     component: Onboarding5,
@@ -49,17 +55,20 @@ const componentsMap: Record<string, StepInfo> = {
   "6": {
     component: Onboarding6,
     title: "",
-    options: [""]
+    options: [""],
+    type:"Aspiration"
   },
   "7": {
     component: Onboarding6,
     title: "",
-    options: [""]
+    options: [""],
+    type:"Aspiration"
   },
   "8": {
     component: CheckBox,
     title: "",
-    options: [""]
+    options: [""],
+    type:"Aspiration"
   },
   "9": {
     component: Habit,
@@ -70,7 +79,8 @@ const componentsMap: Record<string, StepInfo> = {
               "start my day with an affirmation",
               "track my spending and savings regularly",
               "prioritize quality time with my child"
-            ]
+            ],
+            type:"Aspiration"
   },
   "10": {
     component: LearningGoal, //learinin goal 
@@ -81,7 +91,8 @@ const componentsMap: Record<string, StepInfo> = {
               "the life of the party",
               "a financially savvy investor",
               "a parent that can be trusted and relied on"
-            ]
+            ],
+            type:"Aspiration"
   },
   "11": {
     component: Habit,
@@ -92,47 +103,67 @@ const componentsMap: Record<string, StepInfo> = {
               "the life of the party",
               "a financially savvy investor",
               "a parent that can be trusted and relied on"
-            ]
+            ],
+            type:"Aspiration"
   },
   "12": {
     component: Option,
     title: "Commit to growing?",
-    options: ["7 - day streak", "14 - day streak", "30 - day streak","50 - day streak"]
+    options: ["7 - day streak", "14 - day streak", "30 - day streak","50 - day streak"],
+    type:"Aspiration"
   },
   "13": {
     component: ComitmentPact,
     title: "Commit to growing?",
-    options: [""]
+    options: [""],
+    type:"Aspiration"
   },
   "14": {
     component: GreatJob,
     title: "Great job",
-    options: [""]
+    options: [""],
+    type:"Aspiration"
   },
   "15": {
     component: OptionsImg,
     title: "When do you like to find out new ideas?",
-    options: [""]
+    options: [""],
+    type:"Like Time"
   },
   "16": {
     component: Days,
     title: "When do you like to find out new ideas?",
-    options: [""]
+    options: [""],
+    type:"Like Time"
+
   },
   "17": {
     component: Statement,
     title: "I enjoy reading, but it’s hard for me to finish whole books.",
-    options: [""]
+    options: [""],
+    type:"Like Time"
+
   },
   "18": {
     component: Statement,
     title: "I value self-growth, but I may lack motivation to find time for it.",
-    options: [""]
+    options: [""],
+    type:"Like Time"
+
   },
   "19": {
     component: Statement,
     title: "I believe that personal growth should bring pleasure, not struggle.",
-    options: [""]
+    options: [""],
+    type:"Like Time"
+
+  },
+  "20": {
+    component: Paywall,
+    title: "I believe that personal growth should bring pleasure, not struggle.",
+    options: [""],
+    type:"Like Time"
+
   },
 }
 
