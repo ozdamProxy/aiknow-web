@@ -32,7 +32,7 @@ const componentsMap: Record<string, StepInfo> = {
   "2": {
     component: Option,
     title: "What is your focus right now?",
-    options: ["Practice self-discipline & consistency", "Develop my career skills", "Broaden my knowledge","Understand myself & others better","I don’t relate to any of these"],
+    options: ["Practice self-discipline & consistency", "Develop my career skills", "Broaden my knowledge","Understand myself & others better","I don't relate to any of these"],
     type:"About you"
   },
   "3": {
@@ -43,14 +43,15 @@ const componentsMap: Record<string, StepInfo> = {
   },
   "4": {
     component: Option,
-    title: "What’s your age?",
+    title: "What's your age?",
     options: ["18-24", "25-34", "35-44","45-54","55+"],
     type:"About you"
   },
   "5": {
     component: Onboarding5,
-    title: "What’s your age?",
-    options: ["18-24", "25-34", "35-44","45-54","55+"]
+    title: "What's your age?",
+    options: ["18-24", "25-34", "35-44","45-54","55+"],
+    type: "About you"
   },
   "6": {
     component: Onboarding6,
@@ -139,7 +140,7 @@ const componentsMap: Record<string, StepInfo> = {
   },
   "17": {
     component: Statement,
-    title: "I enjoy reading, but it’s hard for me to finish whole books.",
+    title: "I enjoy reading, but it's hard for me to finish whole books.",
     options: [""],
     type:"Like Time"
 
