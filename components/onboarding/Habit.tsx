@@ -14,7 +14,7 @@ const Habit:React.FC<Omit<OptionProps, 'title'>> = ({options, step}) => {
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
-  const { setHabit, setBecome } = useOptionContext();
+  const { selectedHabit, setHabit, selectedBecome, setBecome } = useOptionContext();
 
 
   const handleOptionClick = (option: string) => {

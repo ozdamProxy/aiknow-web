@@ -6,7 +6,7 @@ interface OptionProps {
   title: string;
   options: string[];
   step:string;
-  type: string;
+  type:String
 }
 
 const Options:React.FC<OptionProps> = ({title,options,step,type}) => {

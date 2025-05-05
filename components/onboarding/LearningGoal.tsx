@@ -13,6 +13,7 @@ interface OptionProps {
 
 const LearningGoal:React.FC<Omit<OptionProps, 'options'>> = ({title, step}) => {
 
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
 
   const numbers = Array.from({ length: 10 }, (_, i) => i + 1); // 1-10 arası sayılar

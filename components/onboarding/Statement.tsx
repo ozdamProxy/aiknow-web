@@ -1,7 +1,9 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import ContinueButton from "./ContinueButton";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface OptionProps {
     title: string;
