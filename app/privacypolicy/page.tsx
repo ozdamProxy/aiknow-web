@@ -34,32 +34,11 @@ const PrivacyPolicy = () => {
         },
         {
           label: 'Automatically Collected Data',
-          value: '- Technical and Usage Details: We automatically gather data such as language settings, IP address, device type and model, operating system, time zone, Internet service provider or mobile carrier, and app usage metrics.\n- Device Identifiers: On iOS devices, we may collect unique device IDs (e.g., IDFA) for tracking purposes only after obtaining your explicit permission through Apple\'s App Tracking Transparency framework. See the "App Tracking Transparency" section below for more details.\n- Cookies and Tracking Technologies: We use cookies, pixels, and similar technologies on our Website to remember your preferences, measure ad performance, and gather analytics.',
+          value: '- Technical and Usage Details: We automatically gather data such as language settings, IP address, device type and model, operating system, unique device IDs (e.g., IDFA or AAID), time zone, Internet service provider or mobile carrier, and app usage metrics.\n- Cookies and Tracking Technologies: We use cookies, pixels, and similar technologies on our Website to remember your preferences, measure ad performance, and gather analytics.',
         },
         {
           label: 'Transaction Data',
           value: 'If you make purchases within the Service (e.g., subscriptions), our payment processors may collect payment and billing information. We do not store complete credit card details ourselves.',
-        },
-      ],
-    },
-    {
-      title: 'App Tracking Transparency',
-      items: [
-        {
-          label: 'Permission Request',
-          value: 'On iOS devices, we use Apple\'s App Tracking Transparency framework to request your permission before collecting any device data that may be used to track you across apps and websites owned by other companies. You will receive a prompt asking for permission when you first launch the app after installation or update.',
-        },
-        {
-          label: 'Data Subject to Tracking Permission',
-          value: 'Data that may be used for tracking includes:\n- Device identifiers (such as IDFA)\n- Usage data that may be combined with data from third parties\n- Information shared with advertising partners',
-        },
-        {
-          label: 'If You Decline Permission',
-          value: 'If you choose not to grant permission for tracking:\n- We will not collect your device identifier for advertising purposes\n- We will not share your data with third parties for tracking purposes\n- You may still see ads, but they will be less personalized\n- All other app functionality will remain available',
-        },
-        {
-          label: 'Changing Your Decision',
-          value: 'You can change your tracking preferences at any time through your device settings:\n1. Open the Settings app on your iOS device\n2. Scroll down and tap on "I Know"\n3. Toggle the "Allow Tracking" option as desired',
         },
       ],
     },
@@ -146,7 +125,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <h1 className="text-3xl font-bold mb-4 text-center">I Know: Privacy Policy</h1>
-      <p className="text-center text-gray-600 mb-8">Last updated: June 12, 2023</p>
+      <p className="text-center text-gray-600 mb-8">Last updated: March 30, 2025</p>
       
       <div className="space-y-8">
         {privacyData.map((section, index) => (

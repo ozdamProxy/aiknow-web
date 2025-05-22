@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation"
-import { useOptionContext } from "@/context/OptionContextType";
 import { log } from "console";
+import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+import type { Answers } from "@/context/OptionContextType"; // Import the type
+
 
 interface OptionProps {
   title: string;
@@ -15,21 +17,25 @@ const Habit:React.FC<OptionProps> = ({title,options,step}) => {
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
-  const { selectedHabit, setHabit, selectedBecome, setBecome } = useOptionContext();
+  const { answers, setAnswers } = useOnboarding();
+  const [canNavigate, setCanNavigate] = useState(false);  // yönlendirme izni
 
+  useEffect(() => {
+      console.log(`answer =>>> ${answers.focus} ${answers.become} ${answers.habit}`)
+      if (canNavigate) {
+        router.push(`/onboarding/${parseInt(step) + 1}`);
+      }
+    }, [answers]); 
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
 
-    if (step == "9") {
-      setHabit(option);
-    } else if (step == "11") {
-      setBecome(option);
-    }
- 
-    setTimeout(() => {
-      router.push(`/onboarding/${parseInt(step) + 1}`);
-    }, 100);
+    const updates: Partial<Answers> = {};
+    if (step === "9") updates.focus = option;
+    if (step === "11") updates.become = option;
+   
+    setAnswers(updates);
+    setCanNavigate(true); 
   };
 
   return (

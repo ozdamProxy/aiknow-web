@@ -15,9 +15,24 @@ interface OptionProps {
 
     const router = useRouter();
 
-    const handleNextStep = () => {
-        router.push(`/onboarding/${parseInt(step) + 1}`); 
-    };
+   
+const handleNextStep = () => {
+  
+
+  // if (parseInt(step) === 19) {
+  
+  //   const randomUserId = crypto.randomUUID()
+    
+  
+  //   const revenueCatUrl = `https://pay.rev.cat/sandbox/rcvtknwdvodrozjs/200`;
+   
+  //   console.log(`uuid ${randomUserId}`)
+  //   window.location.href = revenueCatUrl;
+    
+  // } else {
+    router.push(`/onboarding/${parseInt(step) + 1}`);
+  // }
+};
  
 
   return (

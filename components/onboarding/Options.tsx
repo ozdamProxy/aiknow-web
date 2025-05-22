@@ -1,7 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation"
+import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+import type { Answers } from "@/context/OptionContextType"; // Import the type
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+
+
 interface OptionProps {
   title: string;
   options: string[];
@@ -16,7 +21,7 @@ const Options:React.FC<OptionProps> = ({title,options,step,type}) => {
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
-    router.push(`/onboarding/${parseInt(step) + 1}`);  
+    router.push(`/onboarding/${parseInt(step) + 1}`);
   };
 
   return (

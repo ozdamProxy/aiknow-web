@@ -1,45 +1,34 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from "react";
+"use client";
 
-interface OptionContextType {
-  selectedSummaries: Record<string, string>;
-  setSummaries: (step: string, option: string) => void;
-  selectedHabit: string;  // 🟢 Artık sadece string
-  setHabit: (option: string) => void; // 🟢 step gereksiz, sadece option alıyor
-  selectedBecome: string; // 🟢 Aynı şekilde string
-  setBecome: (option: string) => void; // 🟢 step olmadan güncelleniyor
+import { createContext, useContext, useState, ReactNode } from "react";
 
-}
+export  type Answers = {
+  focus?: string;
+  habit?: string;
+  weekly_learning?: string;
+  become?: string;
+};
 
-const OptionContext = createContext<OptionContextType | undefined>(undefined);
+const OnboardingContext = createContext<{
+  answers: Answers;
+  setAnswers: (newAnswers: Partial<Answers>) => void;
+}>({
+  answers: {},
+  setAnswers: () => {},
+});
 
-export const OptionProvider = ({ children }: { children: ReactNode }) => {
-  const [selectedSummaries, setSelectedSummaries] = useState<Record<string, string>>({});
-  const [selectedHabit, setSelectedHabit] = useState<string>("");  
-  const [selectedBecome, setSelectedBecome] = useState<string>("");
+export const OnboardingProvider = ({ children }: { children: ReactNode }) => {
+  const [answers, setAnswersState] = useState<Answers>({});
 
-  const setSummaries = (step: string, option: string) => {
-    setSelectedSummaries((prev) => ({ ...prev, [step]: option }));
+  const setAnswers = (newAnswers: Partial<Answers>) => {
+    setAnswersState(prev => ({ ...prev, ...newAnswers }));
   };
 
-  const setHabit = (option: string) => {
-    setSelectedHabit(option);  // 🟢 Artık doğrudan string değerini güncelliyoruz
-  };
-  
-  const setBecome = (option: string) => {
-    setSelectedBecome(option);  // 🟢 Aynı şekilde string olarak güncelliyoruz
-  };
- 
   return (
-    <OptionContext.Provider value={{ selectedSummaries, setSummaries , selectedHabit, setHabit, selectedBecome, setBecome  }}>
+    <OnboardingContext.Provider value={{ answers, setAnswers }}>
       {children}
-    </OptionContext.Provider>
+    </OnboardingContext.Provider>
   );
 };
 
-export const useOptionContext = () => {
-  const context = useContext(OptionContext);
-  if (!context) {
-    throw new Error("useOptionContext must be used within an OptionProvider");
-  }
-  return context;
-};
+export const useOnboarding = () => useContext(OnboardingContext);

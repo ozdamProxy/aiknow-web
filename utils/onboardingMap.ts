@@ -1,5 +1,4 @@
-// utils/onboardingMap.ts
-import Onboarding from "@/app/onboarding/[step]/page";
+
 import Focus from "@/components/onboarding/Focus";
 import Onboarding5 from "@/components/onboarding/Onboarding5";
 import Onboarding6 from "@/components/onboarding/Onboarding6";
@@ -13,7 +12,8 @@ import GreatJob from "@/components/onboarding/GreatJob";
 import OptionsImg from "@/components/onboarding/OptionsImg";
 import Days from "@/components/onboarding/Days";
 import Statement from "@/components/onboarding/Statement";
-import Paywall from "@/components/onboarding/Paywall"
+import ChooseTitle from "@/components/onboarding/ChooseTitle"
+import ScroolPage from "@/components/onboarding/ScroolPage"
 
 interface StepInfo {
   component: ComponentType<any>;  // Bileşen tipi
@@ -32,7 +32,7 @@ const componentsMap: Record<string, StepInfo> = {
   "2": {
     component: Option,
     title: "What is your focus right now?",
-    options: ["Practice self-discipline & consistency", "Develop my career skills", "Broaden my knowledge","Understand myself & others better","I don't relate to any of these"],
+    options: ["practice self-discipline & consistency", "develop my career skills", "broaden my knowledge","understand myself & others better","I don't relate to any of these"],
     type:"About you"
   },
   "3": {
@@ -160,7 +160,14 @@ const componentsMap: Record<string, StepInfo> = {
 
   },
   "20": {
-    component: Paywall,
+    component: ChooseTitle,
+    title: "I believe that personal growth should bring pleasure, not struggle.",
+    options: [""],
+    type:"Like Time"
+
+  },
+  "21": {
+    component: ScroolPage,
     title: "I believe that personal growth should bring pleasure, not struggle.",
     options: [""],
     type:"Like Time"

@@ -2,19 +2,42 @@
 import { log } from "console";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
-
-
+import { Purchases, Offerings } from '@revenuecat/purchases-js';
+import { useEffect , useState} from "react";
+import Link from "next/link";
 
 export default function Home() {
 
   const pathname = usePathname();
   const isOnboarding = pathname.startsWith("/onboarding");
+  const [purchases, setPurchases] = useState<Purchases | null>(null);
+  const [offerings, setOfferings] = useState<Offerings | null>(null);
+
 
   useEffect(() => {
     console.log("pathname:", pathname);
     console.log("isOnboarding:", isOnboarding);
   }, [pathname]);
+
+ 
+  // useEffect(() => {
+  //   console.log("rv", "called");
+
+  //   const initialize = async () => {
+  //     const purchasesInstance = await initRevenueCat("123456");
+  //     setPurchases(purchasesInstance);
+      
+  //     const offeringsData = await purchasesInstance.getOfferings();
+  //     setOfferings(offeringsData);
+
+  //     console.log("rv", offeringsData.all);
+  //   };
+
+  //   initialize();
+  // }, []);
+
+
+
 
   
   return (
@@ -38,9 +61,9 @@ export default function Home() {
           <div className="flex flex-col flex-1  p-4 w-full md:w-1/2  gap-[19px] justify-center  my-[20dp] ">
             <h1 className="text-black text-3xl sm:text-4xl md:text-6xl lg:text-[63px] font-bold  ">The Fastest Way to Gain Life-Changing Knowledge</h1>
             <p className="text-black text-xl font-light ">"With I Know, absorb the best books in minutes and take action today."</p>
-            <button className="px-8 py-4 text-white  bg-[#F7C663] text-[20px] font-light max-w-[215px] inline-block rounded-lg  shadow-md hover:bg-yellow-500 transition">
+            <Link href={"/onboarding/1"} className="px-8 py-4 text-white  bg-[#F7C663] text-[20px] font-light max-w-[215px] inline-block rounded-lg  shadow-md hover:bg-yellow-500 transition">
               Get Started
-            </button>
+            </Link>
           </div>
 
           <div className="relative w-full md:w-1/2">
@@ -144,9 +167,9 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center pt-[60px] h-full text-center text-white px-4">
           <h3 className="text-4xl md:text-6xl font-bold mb-6 w-1/2">Listen or Read Bestselling Summaries Anytime</h3>
           <p className="text-xl  max-w-2xl mb-8 font-light">Get key insights from top books in just 15 minutes—read or listen on the go.</p>
-          <button className="bg-white hover:bg-blue-600 text-black px-8 py-3 rounded-lg text-lg">
+          <Link href={"/onboarding/1"} className="bg-white hover:bg-blue-600 text-black px-8 py-3 rounded-lg text-lg">
             Get Started
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -278,23 +301,23 @@ export default function Home() {
           {/* Sağ taraftaki içerikler */}
           <div className="w-full flex flex-col md:flex-row justify-end gap-8 md:gap-16">
             {/* Company, About Us, Blog */}
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4">
               <h4 className="font-semibold text-lg text-[#28231B]">Company</h4>
               <ul className="flex flex-col gap-2">
                 <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">About Us</a></li>
                 <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Blog</a></li>
               </ul>
-            </div>
+            </div> */}
 
             {/* Support, FAQ, Contact Us */}
             <div className="flex flex-col gap-4">
               <h4 className="font-semibold text-lg text-[#28231B]">Support</h4>
               <ul className="flex flex-col gap-2">
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">FAQ</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Contact Us</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Help Center</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Cookie Policy</a></li>
+                <li><Link href="/paymentinfo" className="text-gray-600 hover:text-gray-900 transition">Payment Info</Link></li>
+                <li><Link href="/paymentinfo" className="text-gray-600 hover:text-gray-900 transition">Contact Us</Link></li>
+                {/* <li><a href="#" className="text-gray-600 hover:text-gray-900 transition">Help Center</a></li> */}
+                <li><Link href="/termsofcondition" className="text-gray-600 hover:text-gray-900 transition">Terms of Service</Link></li>
+                <li><Link href="/privacypolicy" className="text-gray-600 hover:text-gray-900 transition">Privacy Policy</Link></li>
               </ul>
             </div>
 

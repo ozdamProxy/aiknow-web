@@ -4,6 +4,9 @@ import { useRef,useState,useEffect } from "react";
 import { useRouter } from "next/navigation"
 import Image from "next/image";
 import ContinueButton from "./ContinueButton";
+import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+import { Answers } from "@/context/OptionContextType";
+
 
 interface OptionProps {
   title: string;
@@ -13,8 +16,9 @@ interface OptionProps {
 
 const LearningGoal:React.FC<OptionProps> = ({title,options,step}) => {
 
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
+  const { answers, setAnswers } = useOnboarding();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +42,9 @@ const LearningGoal:React.FC<OptionProps> = ({title,options,step}) => {
 
   const handleOptionClick = () => {
    
+    const updates: Partial<Answers> = {};
+       updates.weekly_learning = numbers[activeIndex].toString()
+       setAnswers(updates);
     router.push(`/onboarding/${parseInt(step) + 1}`);  
     
   };

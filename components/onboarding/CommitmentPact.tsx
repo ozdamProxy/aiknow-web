@@ -2,7 +2,8 @@
 import Image from "next/image";
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { useOptionContext } from "@/context/OptionContextType";
+import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+
 
 
 interface OptionProps {
@@ -18,9 +19,9 @@ interface OptionProps {
     const timerRef = useRef<NodeJS.Timeout | null>(null);
     const router = useRouter();
     const [isPressing, setIsPressing] = useState(false); // uzun basılıp basılmadığını takip etmek için
-    const { selectedHabit, selectedBecome } = useOptionContext();
+    const { answers, setAnswers } = useOnboarding();
 
-    console.log(`selected habit ${selectedHabit} become ${selectedBecome}`)
+    console.log(`${answers.become}`)
 
     const handleNextStep = () => {
       router.push(`/onboarding/${parseInt(step) + 1}`);  
@@ -53,9 +54,9 @@ interface OptionProps {
             </p> 
             <div className="bg-[#FEBE5826] border border-[#F7C663] rounded-lg p-[20px] w-[350px]">
               <p className="text-black font-normal text-sm">
-                I want to <span className="font-bold">{selectedHabit}</span> every day by learning{" "}
-                <span className="font-bold">7 summaries per week,</span> helping me become a{" "}
-                <span className="font-bold">{selectedBecome}</span>.
+                I want to <span className="font-bold">{answers.focus}</span> every day by learning{" "}
+                <span className="font-bold">{answers.weekly_learning} summaries per week,</span> helping me become a  
+                <span className="font-bold"> {answers.become}</span>.
                 <br />
                 <br />
                 I commit to my goals.
