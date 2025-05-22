@@ -7,6 +7,7 @@ import type { Answers } from "@/context/OptionContextType"; // Import the type
 import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 
 
+
 interface OptionProps {
   title: string;
   options: string[];
@@ -18,10 +19,17 @@ const Options:React.FC<OptionProps> = ({title,options,step,type}) => {
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
+  const { answers, setAnswers } = useOnboarding();
+
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
     router.push(`/onboarding/${parseInt(step) + 1}`);
+
+    const updates: Partial<Answers> = {};
+    if (step === "12") updates.streak = option;
+  
+    setAnswers(updates);
   };
 
   return (

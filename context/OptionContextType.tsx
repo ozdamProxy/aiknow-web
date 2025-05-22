@@ -7,6 +7,7 @@ export  type Answers = {
   habit?: string;
   weekly_learning?: string;
   become?: string;
+  streak?:string;
 };
 
 const OnboardingContext = createContext<{

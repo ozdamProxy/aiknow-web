@@ -1,5 +1,5 @@
 export default function InfiniteScrollGallery() {
-    const images = Array.from({ length: 12 }, (_, i) => `/onboarding/adeneme.png`);
+    const images = Array.from({ length: 12 }, (_, i) => `/books/b${i+1}.png`);
   
     return (
       <div className="scroll-wrapper">

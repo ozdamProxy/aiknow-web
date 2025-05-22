@@ -4,6 +4,8 @@ import { useState } from "react";
 import ImageGrid from "./ImagesGrid";
 import { useRouter } from "next/navigation"
 import ContinueButton from "./ContinueButton";
+import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+
 interface OptionProps {
   title: string;
   options: string[];
@@ -13,12 +15,16 @@ interface OptionProps {
 
 const ChooseTitle:React.FC<OptionProps> = ({title,options,step,type}) => {
 
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);  
+  const [selectedImages, setSelectedImages] = useState<number[]>([]);
   const router = useRouter();  
+  const { answers, setAnswers } = useOnboarding();
 
   const handleOptionClick = () => {
-    
-    router.push(`/onboarding/${parseInt(step) + 1}`);  
+    if (selectedImages.length >= 3) {
+      router.push(`/onboarding/${parseInt(step) + 1}`);
+    } else {
+      alert("Please select at least 3 books.");
+    }
   };
 
   return (
@@ -31,8 +37,8 @@ const ChooseTitle:React.FC<OptionProps> = ({title,options,step,type}) => {
             
              <div className="flex items-center justify-center gap-3 mt-[40px] mx-[20px]">
      
-             <ImageGrid />
-     
+                    <ImageGrid selectedImages={selectedImages} setSelectedImages={setSelectedImages} />
+
              </div>
 
               <ContinueButton onClick={handleOptionClick} /> 

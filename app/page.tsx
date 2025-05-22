@@ -43,7 +43,7 @@ export default function Home() {
   return (
   <div className="flex flex-col max-w-[1728px]  items-center justify-center min-h-screen w-full mx-auto overflow-x-hidden font-[family-name:var(--font-geist-sans)]">
      
-     <header className={`pt-[30px] ${isOnboarding ? "bg-[#898989]" : ""}`}>
+     <header className={`pt-[30px] flex justify-center ${isOnboarding ? "bg-[#898989]" : ""}` }>
       <Image
             src="/logo.svg"
             alt="Next.js logo"
@@ -61,7 +61,7 @@ export default function Home() {
           <div className="flex flex-col flex-1  p-4 w-full md:w-1/2  gap-[19px] justify-center  my-[20dp] ">
             <h1 className="text-black text-3xl sm:text-4xl md:text-6xl lg:text-[63px] font-bold  ">The Fastest Way to Gain Life-Changing Knowledge</h1>
             <p className="text-black text-xl font-light ">"With I Know, absorb the best books in minutes and take action today."</p>
-            <Link href={"/onboarding/1"} className="px-8 py-4 text-white  bg-[#F7C663] text-[20px] font-light max-w-[215px] inline-block rounded-lg  shadow-md hover:bg-yellow-500 transition">
+            <Link href={"/onboarding/1"} className="px-8 py-4 text-white  text-center bg-[#F7C663] text-[20px] font-light max-w-[215px] inline-block rounded-lg  shadow-md hover:bg-yellow-500 transition">
               Get Started
             </Link>
           </div>

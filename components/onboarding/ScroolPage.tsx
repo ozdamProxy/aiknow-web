@@ -25,7 +25,7 @@ const ChooseTitle:React.FC<OptionProps> = ({title,options,step,type}) => {
 
     setTimeout(() => {
       window.location.href = revenueCatUrl;
-    }, 3000); // 5 saniye bekle ve yönlendir
+    }, 2000); 
   };
 
   return (
@@ -33,7 +33,7 @@ const ChooseTitle:React.FC<OptionProps> = ({title,options,step,type}) => {
       <div className="w-full mt-[70px] items-center justify-items-center  ">
      
              <CircularProgress onComplete={handleRedirect}  />     
-             <h3 className="sm:text-[20px] mt-[30px] text-[18px] mx-[20px] text-black font-regular  sm:font-medium text-center">Choose 3+ titles you’ve read or are interested in</h3>
+             <h3 className="sm:text-[20px] mt-[30px] text-[18px] mx-[20px] text-black font-regular  sm:font-medium text-center">We’ re customizing the best experience tailored for you...</h3>
             
              <p className="text-[18px] text-black font-regular mt-[20px]">Hold on a sec...</p>
              <div className="flex items-center justify-center gap-3 mt-[40px] ">

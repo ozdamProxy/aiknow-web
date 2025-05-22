@@ -109,20 +109,20 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ step }) => {
       <div className="bg-[#F3F3F3] h-[3px] rounded-full flex-1 relative">
         <motion.div
           className="bg-[#F7C663] h-full rounded-full absolute left-0 top-0"
-          initial={{ width: step_ > 19 ? getProgressWidth(20, 22) : "0%" }}
+          initial={{ width: step_ > 19 ? getProgressWidth(20, 21) : "0%" }}
           animate={{ width: progress6 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         />
       </div>
       
       {/* 7. Nokta */}
-      <div className={`w-[15px] h-[15px] rounded-full ${step_ <= 22 ? "bg-[#F3F3F3]" : "bg-[#F7C663]"}`} />
+      <div className={`w-[15px] h-[15px] rounded-full ${step_ <= 21 ? "bg-[#F3F3F3]" : "bg-[#F7C663]"}`} />
       
       {/* 7. Progress Bar */}
       <div className="bg-[#F3F3F3] h-[3px] rounded-full flex-1 relative">
         <motion.div
           className="bg-[#F7C663] h-full rounded-full absolute left-0 top-0"
-          initial={{ width: step_ > 22 ? getProgressWidth(23, 25) : "0%" }}
+          initial={{ width: step_ > 22 ? getProgressWidth(22, 25) : "0%" }}
           animate={{ width: progress7 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         />
