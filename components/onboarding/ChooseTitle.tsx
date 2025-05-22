@@ -29,7 +29,7 @@ const ChooseTitle:React.FC<OptionProps> = ({title,options,step,type}) => {
 
   return (
   
-      <div className="w-full mt-[70px] items-center justify-items-center  ">
+      <div className="w-full mt-[70px] flex flex-col items-center justify-items-center  ">
      
              <h3 className="text-2xl text-black font-semibold leading-[37px] text-center mb-[10px] sm:mb-[25px]">Like Time</h3> 
      

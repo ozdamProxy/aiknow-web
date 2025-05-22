@@ -30,7 +30,7 @@ export default function Focus() {
       ];
 
   return (
-    <div className="w-full mt-[70px] items-center justify-items-center ">
+    <div className="w-full mt-[70px] flex flex-col items-center justify-items-center ">
 
       <h3 className="text-2xl text-black font-semibold leading-[37px] text-center">What is your focus right now?</h3>
       <p className="text-base text-black mt-[30px] font-bold text-center">The most famous people have <span className="text-base text-[#F7C663]">one thing</span> in common</p>

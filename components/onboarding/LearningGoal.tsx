@@ -51,7 +51,7 @@ const LearningGoal:React.FC<OptionProps> = ({title,options,step}) => {
 
   return (
   
-      <div className="w-full items-center justify-items-center mt-[50px]">
+      <div className="w-full flex flex-col items-center justify-items-center mt-[50px]">
         <h3 className="text-2xl text-black font-semibold leading-[37px] text-center mb-[25px]">{title}</h3> 
         <p className="text-[14px]  lg:text-[20px]  text-black font-normal text-center mb-[10px] w-[330px] lg:w-[430px] px-[15px] py-[10px] bg-[#FEBE5826] rounded-[30px] border border-[#FEBE58]">
             Small steps will help you achieve it faster

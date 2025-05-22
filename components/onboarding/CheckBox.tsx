@@ -38,7 +38,7 @@ const CheckBox:React.FC<OptionProps> = ({title,options,step}) => {
 
   return (
   
-      <div className="w-full  items-center justify-items-center">
+      <div className="w-full  flex flex-col items-center justify-items-center">
         <h3 className="text-2xl text-black font-semibold leading-[37px] text-center">About you</h3> 
         <p className="text-sm text-black font-regular mt-[20px] px-[15px] text-center">Choose up to 3 goals. You can always change goals when they become irrelevant. </p>
         <div className="py-4 mt-[30px] w-full">

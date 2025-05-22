@@ -36,7 +36,7 @@ const handleNextStep = () => {
  
 
   return (
-    <div className="w-full mt-[70px] items-center justify-items-center  ">
+    <div className="w-full mt-[70px] items-center flex flex-col justify-items-center  ">
 
         <h3 className="text-2xl text-black font-semibold leading-[37px] text-center mb-[10px] sm:mb-[25px]">Like Time</h3> 
 

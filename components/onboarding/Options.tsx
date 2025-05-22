@@ -34,7 +34,7 @@ const Options:React.FC<OptionProps> = ({title,options,step,type}) => {
 
   return (
   
-      <div className="w-full mt-[70px] items-center justify-items-center">
+      <div className="w-full mt-[70px] flex flex-col items-center justify-items-center">
           <h3 className="text-[18px] sm:text-[24px] lg:text-[40px] text-black font-medium leading-[37px] text-center mb-[10px] sm:mb-[25px]">{type}</h3> 
 
           <p className="text-[20px] text-black font-semibold leading-[37px] text-center mb-[25px]">

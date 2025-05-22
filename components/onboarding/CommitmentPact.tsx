@@ -45,7 +45,7 @@ interface OptionProps {
     };    
   
       return (
-        <div className="relative w-full h-screen ">
+        <div className="relative w-screen min-h-screen">
           {/* Normal İçerik */}
           <div className={`pt-[20px] transition-opacity duration-700 items-center flex flex-col flex-col justify-center ${isCommitted ? "opacity-0" : "opacity-100"}`}>
           <h3 className="text-2xl text-black font-semibold leading-[37px] text-center mb-[10px] sm:mb-[25px]">Aspiration</h3> 

@@ -13,7 +13,7 @@ export default function Onboarding6() {
       };
 
   return (
-    <div className="w-full my-[18px] items-center justify-items-center mt-[40px] h-full ">
+    <div className="w-full flex flex-col my-[18px] items-center justify-items-center mt-[40px] h-full ">
 
                 <Image
                 src="/onboarding/listen_msc.svg"

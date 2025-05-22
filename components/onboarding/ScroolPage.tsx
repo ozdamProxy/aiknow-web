@@ -30,7 +30,7 @@ const ChooseTitle:React.FC<OptionProps> = ({title,options,step,type}) => {
 
   return (
   
-      <div className="w-full mt-[70px] items-center justify-items-center  ">
+      <div className="w-full mt-[70px] flex flex-col items-center justify-items-center  ">
      
              <CircularProgress onComplete={handleRedirect}  />     
              <h3 className="sm:text-[20px] mt-[30px] text-[18px] mx-[20px] text-black font-regular  sm:font-medium text-center">We’ re customizing the best experience tailored for you...</h3>

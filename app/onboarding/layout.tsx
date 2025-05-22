@@ -28,7 +28,7 @@ export default function RootLayout({
     return (
       <OnboardingProvider>
      
-        <div className={`flex flex-col min-h-screen ${step === "6" ? "bg-[#FFFFFF]" : "bg-transparent"}`}>
+        <div className={`flex flex-col min-h-screen w-full mx-auto justify-center items-center min-h-screen ${step === "6" ? "bg-[#FFFFFF]" : "bg-transparent"}`}>
 
           {!isCommitted && <OnboardingHeader />}
           {!isCommitted  && <ProgressBar step={step} />}

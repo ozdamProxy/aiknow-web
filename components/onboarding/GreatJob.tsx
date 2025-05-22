@@ -24,7 +24,7 @@ const GreatJob:React.FC<OptionProps> = ({title,options,step}) => {
 
   return (
   
-      <div className="w-full items-center justify-items-center mt-[70px]">
+      <div className="w-full items-center justify-items-center mt-[70px] flex flex-col">
         <h3 className="text-2xl text-black font-semibold leading-[37px] text-center mb-[10px] sm:mb-[25px]">Like Time</h3> 
         <p className="text-[18px] sm:text-[20px] font-normal text-black sm:font-semibold  text-center mb-[25px] px-[10px]">You unlocked the Star Shooter achievement for aiming high and siting your goals</p> 
         <p className="text-sm text-black font-normal text-center mb-[10px] max-w-[350px] text-start">

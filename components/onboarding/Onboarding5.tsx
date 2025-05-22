@@ -33,7 +33,7 @@ export default function Onboarding5() {
       };
 
   return (
-    <div className="w-full my-[18px] items-center justify-items-center mt-[40px] ">
+    <div className="w-full my-[18px] flex flex-col items-center justify-items-center mt-[40px] ">
         <h3 className="text-[18px] sm:text-[24px] lg:text-[40px] text-black font-medium  text-center ">Aspiration</h3>
         <h3 className="text-[14px]   sm:text-[16px] lg:text-[22px] text-black font-medium text-center px-[15px] mt-[10px]">“I Know” helps you reach your goals efficiently with bite-sized summaries</h3>
 

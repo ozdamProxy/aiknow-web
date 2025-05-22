@@ -43,7 +43,9 @@ export default function Home() {
   return (
   <div className="flex flex-col max-w-[1728px]  items-center justify-center min-h-screen w-full mx-auto overflow-x-hidden font-[family-name:var(--font-geist-sans)]">
      
-     <header className={`pt-[30px] flex justify-center ${isOnboarding ? "bg-[#898989]" : ""}` }>
+     <header  className={`pt-[30px] flex items-center justify-center ${
+    isOnboarding ? "bg-[#898989]" : ""
+  }`}>
       <Image
             src="/logo.svg"
             alt="Next.js logo"

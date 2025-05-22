@@ -40,7 +40,7 @@ const Habit:React.FC<OptionProps> = ({title,options,step}) => {
 
   return (
   
-      <div className="w-full items-center justify-items-center mt-[50px]">
+      <div className="w-full items-center  flex flex-col justify-items-center mt-[50px]">
         <h3 className="text-2xl text-black font-semibold leading-[37px] text-center mb-[10px] sm:mb-[25px]">Aspiration</h3> 
 
         <p className="text-[20px] text-black font-semibold leading-[37px] text-center mb-[25px]">

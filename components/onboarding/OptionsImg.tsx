@@ -26,7 +26,7 @@ const OptionsImg:React.FC<OptionProps> = ({title,options,step}) => {
 
   return (
   
-    <div className="w-full mt-[70px] items-center justify-items-center">
+    <div className="w-full mt-[70px] flex flex-col items-center justify-items-center">
     <h3 className="lg:text-[40px] text-[24px] text-black font-medium leading-[37px] text-center mb-[10px] sm:mb-[25px]">Like Time</h3> 
     <h6 className="text-[18px] sm:text-[24px] text-black font-medium lg:font-semibold leading-[37px] text-center">{title}</h6> 
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4 mt-5">
