@@ -17,10 +17,16 @@ interface OptionProps {
 const LearningGoal:React.FC<OptionProps> = ({title,options,step}) => {
 
   const router = useRouter();  
-  const { answers, setAnswers } = useOnboarding();
+  const { answers, setAnswers,currentStep,setCurrentStep } = useOnboarding();
 
 
   useEffect(() => {
+
+      if (parseInt(step) > currentStep) {
+        router.replace(`/onboarding/${currentStep}`);
+        return;  
+      }
+
     const handleScroll = () => {
       if (!containerRef.current) return;
 
@@ -45,6 +51,7 @@ const LearningGoal:React.FC<OptionProps> = ({title,options,step}) => {
     const updates: Partial<Answers> = {};
        updates.weekly_learning = numbers[activeIndex].toString()
        setAnswers(updates);
+        setCurrentStep(parseInt(step) + 1);
     router.push(`/onboarding/${parseInt(step) + 1}`);  
     
   };

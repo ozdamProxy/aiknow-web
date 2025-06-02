@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import ContinueButton from "./ContinueButton";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
 
@@ -16,10 +16,17 @@ interface OptionProps {
   const Days:React.FC<OptionProps> = ({title,options,step}) => {
 
     const router = useRouter();
-        const { answers, setAnswers } = useOnboarding();
+        const { answers, setAnswers,currentStep,setCurrentStep } = useOnboarding();
     
+     useEffect(() => {
+        if (parseInt(step) > currentStep) {
+        router.replace(`/onboarding/${currentStep}`);
+        return;  
+      }
+     },[])
 
     const handleNextStep = () => {
+        setCurrentStep(parseInt(step) + 1);
         router.push(`/onboarding/${parseInt(step) + 1}`); 
     };
  

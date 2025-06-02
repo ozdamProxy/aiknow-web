@@ -2,19 +2,22 @@
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import ContinueButton from "./ContinueButton";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
-
+import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
 
 
 export default function Focus() {
 
     const [step, setStep] = useState(1);
     const router = useRouter();
+    const { currentStep, setCurrentStep, setAnswers } = useOnboarding();
+
 
     const handleNextStep = () => {
-      console.log(`${step}`)
-      router.push(`/onboarding/2`)
+      const nextStep = currentStep + 1;
+      setCurrentStep(nextStep);
+      router.push(`/onboarding/2`);
     };
  
     const images = [

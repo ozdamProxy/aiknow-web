@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation"
 import Image from "next/image";
 import goalsList from "@/utils/goalMap";
 import ContinueButton from "./ContinueButton";
+import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+
 
 interface OptionProps {
   title: string;
@@ -16,6 +18,8 @@ const CheckBox:React.FC<OptionProps> = ({title,options,step}) => {
 
 
   const router = useRouter();  
+  const { currentStep, setCurrentStep, setAnswers } = useOnboarding();
+
 
   const [checkedItems, setCheckedItems] = useState(
     new Array(goalsList.length).fill(false) // Başlangıçta tüm değerler false (seçilmemiş)
@@ -31,9 +35,18 @@ const CheckBox:React.FC<OptionProps> = ({title,options,step}) => {
     setCheckedItems(updatedCheckedItems);
   };
 
+   useEffect(() => {
+      if (parseInt(step) > currentStep) {
+      router.replace(`/onboarding/${currentStep}`);
+      return
+    }
+    }, []); 
+  
 
   const handleNextStep = () => {
-    router.push(`/onboarding/${parseInt(step) + 1}`);  
+     const nextStep = currentStep + 1;
+      setCurrentStep(nextStep);
+      router.push(`/onboarding/${nextStep}`);
   };
 
   return (

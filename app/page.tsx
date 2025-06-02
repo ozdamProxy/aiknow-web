@@ -14,10 +14,6 @@ export default function Home() {
   const [offerings, setOfferings] = useState<Offerings | null>(null);
 
 
-  useEffect(() => {
-    console.log("pathname:", pathname);
-    console.log("isOnboarding:", isOnboarding);
-  }, [pathname]);
 
  
   // useEffect(() => {

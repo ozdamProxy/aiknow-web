@@ -1,6 +1,9 @@
+
+import { useEffect } from 'react';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import FacebookSDKProvider from '../provider/FacebookSDKProvider';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,8 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <FacebookSDKProvider>
+          {children}
+        </FacebookSDKProvider>
       </body>
     </html>
   );

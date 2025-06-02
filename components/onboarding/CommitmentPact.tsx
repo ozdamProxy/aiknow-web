@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
 
@@ -19,11 +19,18 @@ interface OptionProps {
     const timerRef = useRef<NodeJS.Timeout | null>(null);
     const router = useRouter();
     const [isPressing, setIsPressing] = useState(false); // uzun basılıp basılmadığını takip etmek için
-    const { answers, setAnswers } = useOnboarding();
+    const { answers, setAnswers, currentStep, setCurrentStep } = useOnboarding();
 
     console.log(`${answers.become}`)
 
+    useEffect(() => {
+        if (parseInt(step) > currentStep) {
+        router.replace(`/onboarding/${currentStep}`);
+        return;  
+      }},[])
+
     const handleNextStep = () => {
+      setCurrentStep(parseInt(step) + 1)
       router.push(`/onboarding/${parseInt(step) + 1}`);  
     };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import ImageGrid from "./ImagesGrid";
 import { useRouter } from "next/navigation"
 import ContinueButton from "./ContinueButton";
@@ -17,10 +17,19 @@ const ChooseTitle:React.FC<OptionProps> = ({title,options,step,type}) => {
 
   const [selectedImages, setSelectedImages] = useState<number[]>([]);
   const router = useRouter();  
-  const { answers, setAnswers } = useOnboarding();
+  const { answers, setAnswers , currentStep,setCurrentStep} = useOnboarding();
+
+  useEffect(() => {
+        if (parseInt(step) > currentStep) {
+        router.replace(`/onboarding/${currentStep}`);
+        return
+      }
+      }, []); 
 
   const handleOptionClick = () => {
     if (selectedImages.length >= 3) {
+       const nextStep = currentStep + 1;
+      setCurrentStep(nextStep);
       router.push(`/onboarding/${parseInt(step) + 1}`);
     } else {
       alert("Please select at least 3 books.");

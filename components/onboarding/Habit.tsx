@@ -17,12 +17,19 @@ const Habit:React.FC<OptionProps> = ({title,options,step}) => {
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
-  const { answers, setAnswers } = useOnboarding();
+  const { answers, setAnswers, currentStep, setCurrentStep } = useOnboarding();
   const [canNavigate, setCanNavigate] = useState(false);  // yönlendirme izni
 
   useEffect(() => {
+    if (parseInt(step) > currentStep) {
+    router.replace(`/onboarding/${currentStep}`);
+    return;  
+  }
+
+
       console.log(`answer =>>> ${answers.focus} ${answers.become} ${answers.habit}`)
       if (canNavigate) {
+        setCurrentStep(currentStep + 1);
         router.push(`/onboarding/${parseInt(step) + 1}`);
       }
     }, [answers]); 

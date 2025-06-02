@@ -2,8 +2,10 @@
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import ContinueButton from "./ContinueButton";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+
 
 interface OptionProps {
     title: string;
@@ -14,25 +16,20 @@ interface OptionProps {
   const Statement:React.FC<OptionProps> = ({title,options,step}) => {
 
     const router = useRouter();
+    const { answers, setAnswers,currentStep,setCurrentStep } = useOnboarding();
 
-   
-const handleNextStep = () => {
-  
+    useEffect(() => {
+           if (parseInt(step) > currentStep) {
+           router.replace(`/onboarding/${currentStep}`);
+           return;  
+         }
+        },[])
 
-  // if (parseInt(step) === 19) {
-  
-  //   const randomUserId = crypto.randomUUID()
-    
-  
-  //   const revenueCatUrl = `https://pay.rev.cat/sandbox/rcvtknwdvodrozjs/200`;
-   
-  //   console.log(`uuid ${randomUserId}`)
-  //   window.location.href = revenueCatUrl;
-    
-  // } else {
-    router.push(`/onboarding/${parseInt(step) + 1}`);
-  // }
-};
+    const handleNextStep = () => {
+        setCurrentStep(parseInt(step) + 1)
+        router.push(`/onboarding/${parseInt(step) + 1}`);
+
+    };
  
 
   return (

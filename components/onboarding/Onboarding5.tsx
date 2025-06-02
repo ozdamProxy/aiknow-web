@@ -3,14 +3,28 @@ import Image from "next/image";
 import ContinueButton from "./ContinueButton";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+interface OptionProps {
+  title: string;
+  options: string[];
+  step:string
+}
 
-export default function Onboarding5() {
+const Onboarding5:React.FC<OptionProps> = ({title,options,step}) =>  {
 
     const router = useRouter();
 
     const [imageSrc, setImageSrc] = useState("/onboarding/arrow_.svg");
+     const { currentStep, setCurrentStep, setAnswers} = useOnboarding();
+   
 
     useEffect(() => {
+      
+        if (parseInt(step) > currentStep) {
+          router.replace(`/onboarding/${currentStep}`);
+          return;  
+        }
+
         function handleResize() {
           if (window.innerWidth < 640) { // sm breakpoint (640px)
             setImageSrc("/onboarding/arrow_down.svg");
@@ -19,10 +33,8 @@ export default function Onboarding5() {
           }
         }
     
-        // İlk yüklemede kontrol et
         handleResize();
         
-        // Ekran boyutu değiştiğinde kontrol et
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
       }, []);
@@ -95,3 +107,4 @@ export default function Onboarding5() {
     </div>
   );
 }
+export default Onboarding5

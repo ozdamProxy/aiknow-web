@@ -20,7 +20,7 @@ const ChooseTitle:React.FC<OptionProps> = ({title,options,step,type}) => {
 
   const handleRedirect = () => {
     const randomUserId = crypto.randomUUID();
-    const revenueCatUrl = `https://pay.rev.cat/sandbox/rcvtknwdvodrozjs/${randomUserId}`;
+    const revenueCatUrl = `https://pay.rev.cat/allrsvoofikggkdm/${randomUserId}`;
     console.log(`uuid ${randomUserId}`);
 
     setTimeout(() => {

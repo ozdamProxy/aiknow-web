@@ -19,17 +19,26 @@ const Options:React.FC<OptionProps> = ({title,options,step,type}) => {
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
-  const { answers, setAnswers } = useOnboarding();
+const { answers, setAnswers, currentStep, setCurrentStep } = useOnboarding();
 
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
-    router.push(`/onboarding/${parseInt(step) + 1}`);
 
-    const updates: Partial<Answers> = {};
-    if (step === "12") updates.streak = option;
-  
-    setAnswers(updates);
+   setSelectedOption(option);
+
+  // Cevapları güncelle
+  const updates: Partial<Answers> = {};
+  if (step === "12") updates.streak = option;
+  setAnswers(updates);
+
+  // Eğer bu adım en güncel adım ise, ilerlet
+  if (parseInt(step) === currentStep) {
+    setCurrentStep(currentStep + 1);
+  }
+
+  // Bir sonraki adıma yönlendir
+  router.push(`/onboarding/${parseInt(step) + 1}`);
   };
 
   return (

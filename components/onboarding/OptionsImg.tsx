@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation"
 import Image from "next/image";
 import ideasList from "@/utils/ideasList";
+import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
 
 
 interface OptionProps {
@@ -18,8 +19,18 @@ const OptionsImg:React.FC<OptionProps> = ({title,options,step}) => {
 
     const [selectedOption, setSelectedOption] = useState<string | null>(null);  
     const router = useRouter();  
+    const { answers, setAnswers,currentStep,setCurrentStep } = useOnboarding();
+    
+   useEffect(() => {
+             if (parseInt(step) > currentStep) {
+             router.replace(`/onboarding/${currentStep}`);
+             return;  
+           }
+          },[])
   
     const handleOptionClick = (option: string) => {
+              setCurrentStep(parseInt(step) + 1)
+
       setSelectedOption(option);
       router.push(`/onboarding/${parseInt(step) + 1}`);  
     };
