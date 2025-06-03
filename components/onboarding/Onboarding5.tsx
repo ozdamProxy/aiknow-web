@@ -41,7 +41,10 @@ const Onboarding5:React.FC<OptionProps> = ({title,options,step}) =>  {
 
 
     const handleNextStep = () => {
-        router.push(`/onboarding/6`)
+        if (parseInt(step) === currentStep) {
+          setCurrentStep(currentStep + 1);
+        }
+        router.push(`/onboarding/${parseInt(step) + 1}`);
       };
 
   return (

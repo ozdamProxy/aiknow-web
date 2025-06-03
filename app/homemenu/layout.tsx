@@ -20,25 +20,18 @@ export default function RootLayout({
     return (
      
      
-        <div className={`min-h-screen w-full`}>
-
-        <HeaderHome/>
-
+        <div className="min-h-screen w-full flex bg-white">
+    
+            <HeaderHome />
             <motion.div
-             
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }} // Animasyon süresi
-              className="flex-1"
+              transition={{ duration: 0.5 }}
+              className="flex-1 overflow-auto"
             >
-              
-            
+              {children}
             </motion.div>
-
-
-<h1>home munes</h1>
-          <div className="flex-1">{children}</div>
         </div>
      
     
