@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
 import type { Answers } from "@/context/OptionContextType"; // Import the type
 import { loadGetInitialProps } from "next/dist/shared/lib/utils";
-
+import mixpanel from "@/utils/mixPanel";
 
 
 interface OptionProps {
@@ -19,25 +19,38 @@ const Options:React.FC<OptionProps> = ({title,options,step,type}) => {
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);  
   const router = useRouter();  
-const { answers, setAnswers, currentStep, setCurrentStep } = useOnboarding();
-
+  const { answers, setAnswers, currentStep, setCurrentStep } = useOnboarding();
 
   const handleOptionClick = (option: string) => {
-    setSelectedOption(option);
+    
+   if(step=="2"){
+     mixpanel.track('ob_focus_selected', {
+      focus_option: option,
+    });
+   }else if(step=="3"){
+     mixpanel.track('ob_gender_selected', {
+      gender_option: option,
+    });
+   }else if(step=="4"){
+     mixpanel.track('ob_age', {
+      age_group: option,
+    })}
+    else if(step=="12"){
+     mixpanel.track('ob_commit', {
+      commit_option: option,
+    });
+   }
 
    setSelectedOption(option);
 
-  // Cevapları güncelle
   const updates: Partial<Answers> = {};
   if (step === "12") updates.streak = option;
   setAnswers(updates);
 
-  // Eğer bu adım en güncel adım ise, ilerlet
   if (parseInt(step) === currentStep) {
     setCurrentStep(currentStep + 1);
   }
 
-  // Bir sonraki adıma yönlendir
   router.push(`/onboarding/${parseInt(step) + 1}`);
   };
 

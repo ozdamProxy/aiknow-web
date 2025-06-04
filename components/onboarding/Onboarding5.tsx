@@ -4,6 +4,8 @@ import ContinueButton from "./ContinueButton";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+import mixpanel from "@/utils/mixPanel";
+
 interface OptionProps {
   title: string;
   options: string[];
@@ -41,6 +43,10 @@ const Onboarding5:React.FC<OptionProps> = ({title,options,step}) =>  {
 
 
     const handleNextStep = () => {
+
+        mixpanel.track('ob_listening', {
+         });
+      
         if (parseInt(step) === currentStep) {
           setCurrentStep(currentStep + 1);
         }

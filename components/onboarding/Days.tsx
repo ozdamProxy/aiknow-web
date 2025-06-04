@@ -5,6 +5,7 @@ import ContinueButton from "./ContinueButton";
 import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+import mixpanel from "@/utils/mixPanel";
 
 
 interface OptionProps {
@@ -26,6 +27,8 @@ interface OptionProps {
      },[])
 
     const handleNextStep = () => {
+        mixpanel.track('ob_days', {
+        });
         setCurrentStep(parseInt(step) + 1);
         router.push(`/onboarding/${parseInt(step) + 1}`); 
     };

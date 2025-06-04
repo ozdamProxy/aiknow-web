@@ -20,7 +20,7 @@ export default function RootLayout({
     return (
      
      
-        <div className="min-h-screen w-full flex bg-white">
+        <div className="min-h-screen w-full flex  relative ">
     
             <HeaderHome />
             <motion.div
@@ -28,7 +28,7 @@ export default function RootLayout({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex-1 overflow-auto"
+              className="md:flex-1 md:overflow-auto w-full "
             >
               {children}
             </motion.div>

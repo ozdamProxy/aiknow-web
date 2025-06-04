@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
-
+import mixpanel from "@/utils/mixPanel";
 
 
 interface OptionProps {
@@ -48,7 +48,6 @@ interface OptionProps {
         if (timerRef.current) {
           clearTimeout(timerRef.current);
         }
-       
     };    
   
       return (

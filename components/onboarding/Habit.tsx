@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { log } from "console";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
 import type { Answers } from "@/context/OptionContextType"; // Import the type
+import mixpanel from "@/utils/mixPanel";
 
 
 interface OptionProps {
@@ -36,6 +37,17 @@ const Habit:React.FC<OptionProps> = ({title,options,step}) => {
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
+
+      
+   if(step=="9"){
+     mixpanel.track('ob_habit', {
+      habit_option: option,
+    });
+   }else if(step=="11"){
+     mixpanel.track('ob_become', {
+      become_option: option,
+    });
+   }
 
     const updates: Partial<Answers> = {};
     if (step === "9") updates.focus = option;

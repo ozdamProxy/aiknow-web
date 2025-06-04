@@ -30,10 +30,12 @@ export default function HeaderHome() {
       </button>
        
      <aside className={`
-        md:flex md:flex-col w-64 h-screen bg-[#DCDBDB] text-black p-4 items-center 
+        hidden
+        md:flex md:flex-col w-55  bg-[#FEF8F0] text-black p-4 items-center 
         transition-transform duration-300 transform
         ${open ? 'translate-x-0' : '-translate-x-full'} 
         md:translate-x-0
+       
       `}>
       <div className="flex items-center justify-between h-16 w-full" >
           <Image
@@ -49,7 +51,7 @@ export default function HeaderHome() {
         <nav className="flex flex-col space-y-4">
         <Link
           href="/homemenu"
-          className={`flex items-center gap-3 font-medium ${
+          className={`flex items-center gap-3 text-[14px] font-medium ${
             isActive('/homemenu') ? 'text-[#F7C663]' : 'text-[#666666]'
           }`}
         >
@@ -58,9 +60,9 @@ export default function HeaderHome() {
         </Link>
 
         <Link
-          href="/homemenu"
-          className={`flex items-center gap-3 font-medium ${
-            isActive('/explore') ? 'text-[#F7C663]' : 'text-[#666666]'
+          href="/homemenu/explore"
+          className={`flex items-center gap-3 text-[14px] font-medium ${
+            isActive('/homemenu/explore') ? 'text-[#F7C663]' : 'text-[#666666]'
           }`}
         >
           <Compass size={20} />
@@ -69,7 +71,7 @@ export default function HeaderHome() {
        
         <Link
           href="/library"
-          className={`flex items-center gap-3 font-medium ${
+          className={`flex items-center gap-3 text-[14px] font-medium ${
             isActive('/library') ? 'text-[#F7C663]' : 'text-[#666666]'
           }`}
         >
@@ -77,7 +79,7 @@ export default function HeaderHome() {
           My Library
         </Link>
 
-         <Link href="/library" className="flex items-center gap-3 font-medium text-[#666666]">
+         <Link href="/library" className="flex items-center gap-3 text-[14px] font-medium text-[#666666]">
           <GiftIcon size={20} /> Today's Free Book
         </Link>
       </nav>

@@ -5,6 +5,7 @@ import ContinueButton from "./ContinueButton";
 import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+import mixpanel from "@/utils/mixPanel";
 
 
 interface OptionProps {
@@ -25,7 +26,21 @@ interface OptionProps {
          }
         },[])
 
-    const handleNextStep = () => {
+    const handleNextStep = (answer:string) => {
+       if(step=="17"){
+          mixpanel.track('ob_q1', {
+            q1_option: answer,
+          });
+        }else if(step=="18"){
+          mixpanel.track('ob_q2', {
+            q2_option: answer,
+          });
+        }
+        else if(step=="19"){
+          mixpanel.track('ob_q3', {
+            q3_option: answer,
+          });
+        }
         setCurrentStep(parseInt(step) + 1)
         router.push(`/onboarding/${parseInt(step) + 1}`);
 
@@ -60,7 +75,7 @@ interface OptionProps {
         <div className="flex items-center justify-center gap-3 mt-[40px]">
 
             <div className="flex-col flex  duration-300 gap-2 cursor-pointer hover:bg-[#FFF6E6] items-center justify-center w-[150px] bg-[#E6E6E629] py-[10px] border border-[#F7C663] rounded-lg"
-                onClick={()=>handleNextStep()}>
+                onClick={()=>handleNextStep("yes")}>
                     <Image
                     src={`/onboarding/yes.svg`}
                     alt={`Image_`}
@@ -72,7 +87,7 @@ interface OptionProps {
             </div>
 
             <div className="flex-col flex  hover:bg-[#FFF6E6]  gap-2 items-center justify-center w-[150px] py-[10px] bg-[#E6E6E629] border border-[#F7C663] rounded-lg"
-            onClick={()=>handleNextStep()}>
+            onClick={()=>handleNextStep("no")}>
             <Image
                 src={`/onboarding/no.svg`}
                 alt={`Image_`}

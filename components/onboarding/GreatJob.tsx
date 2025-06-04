@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation"
 import ContinueButton from "./ContinueButton";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+import mixpanel from "@/utils/mixPanel";
 
 
 interface OptionProps {
@@ -27,6 +28,8 @@ const GreatJob:React.FC<OptionProps> = ({title,options,step}) => {
     }},[])
 
   const handleOptionClick = () => {
+     mixpanel.track('ob_good_job', {
+      });
     setCurrentStep(parseInt(step) + 1);
     router.push(`/onboarding/${parseInt(step) + 1}`);  
    

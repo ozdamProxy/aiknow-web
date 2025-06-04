@@ -5,6 +5,7 @@ import ImageGrid from "./ImagesGrid";
 import { useRouter } from "next/navigation"
 import ContinueButton from "./ContinueButton";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+import mixpanel from "@/utils/mixPanel";
 
 interface OptionProps {
   title: string;
@@ -27,6 +28,9 @@ const ChooseTitle:React.FC<OptionProps> = ({title,options,step,type}) => {
       }, []); 
 
   const handleOptionClick = () => {
+      mixpanel.track('ob_books', {
+      
+    });
     if (selectedImages.length >= 3) {
        const nextStep = currentStep + 1;
       setCurrentStep(nextStep);

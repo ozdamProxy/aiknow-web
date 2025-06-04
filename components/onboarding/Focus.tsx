@@ -5,6 +5,7 @@ import ContinueButton from "./ContinueButton";
 import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+import mixpanel from "@/utils/mixPanel";
 
 
 export default function Focus() {
@@ -13,8 +14,11 @@ export default function Focus() {
     const router = useRouter();
     const { currentStep, setCurrentStep, setAnswers } = useOnboarding();
 
-
     const handleNextStep = () => {
+
+      mixpanel.track('ob_famous_people', {
+      });
+
       const nextStep = currentStep + 1;
       setCurrentStep(nextStep);
       router.push(`/onboarding/2`);

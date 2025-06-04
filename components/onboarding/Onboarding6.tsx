@@ -5,6 +5,8 @@ import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
 import { log } from "console";
+import mixpanel from "@/utils/mixPanel";
+
 
 interface OptionProps {
   title: string;
@@ -31,6 +33,8 @@ const Onboarding6:React.FC<OptionProps> = ({title,options,step}) => {
       }},[])
 
     const handleNextStep = () => {
+        mixpanel.track('ob_listening', {
+    });
      setCurrentStep(8);
     router.push(`/onboarding/8`); 
       

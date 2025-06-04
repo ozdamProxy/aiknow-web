@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import Image from "next/image";
 import ideasList from "@/utils/ideasList";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
+import mixpanel from "@/utils/mixPanel";
 
 
 interface OptionProps {
@@ -29,7 +30,11 @@ const OptionsImg:React.FC<OptionProps> = ({title,options,step}) => {
           },[])
   
     const handleOptionClick = (option: string) => {
-              setCurrentStep(parseInt(step) + 1)
+      mixpanel.track('ob_idea', {
+      idea_option: option,
+      });
+
+      setCurrentStep(parseInt(step) + 1)
 
       setSelectedOption(option);
       router.push(`/onboarding/${parseInt(step) + 1}`);  

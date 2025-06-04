@@ -6,6 +6,7 @@ import Image from "next/image";
 import ContinueButton from "./ContinueButton";
 import { useOnboarding } from "@/context/OptionContextType"; // yol senin yapına göre değişebilir
 import { Answers } from "@/context/OptionContextType";
+import mixpanel from "@/utils/mixPanel";
 
 
 interface OptionProps {
@@ -50,6 +51,9 @@ const LearningGoal:React.FC<OptionProps> = ({title,options,step}) => {
    
     const updates: Partial<Answers> = {};
        updates.weekly_learning = numbers[activeIndex].toString()
+        mixpanel.track('ob_weekly_goal', {
+          weekly_goal_option: numbers[activeIndex].toString()
+        });
        setAnswers(updates);
         setCurrentStep(parseInt(step) + 1);
     router.push(`/onboarding/${parseInt(step) + 1}`);  

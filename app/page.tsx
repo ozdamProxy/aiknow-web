@@ -10,32 +10,8 @@ export default function Home() {
 
   const pathname = usePathname();
   const isOnboarding = pathname.startsWith("/onboarding");
-  const [purchases, setPurchases] = useState<Purchases | null>(null);
-  const [offerings, setOfferings] = useState<Offerings | null>(null);
-
-
 
  
-  // useEffect(() => {
-  //   console.log("rv", "called");
-
-  //   const initialize = async () => {
-  //     const purchasesInstance = await initRevenueCat("123456");
-  //     setPurchases(purchasesInstance);
-      
-  //     const offeringsData = await purchasesInstance.getOfferings();
-  //     setOfferings(offeringsData);
-
-  //     console.log("rv", offeringsData.all);
-  //   };
-
-  //   initialize();
-  // }, []);
-
-
-
-
-  
   return (
   <div className="flex flex-col max-w-[1728px]  items-center justify-center min-h-screen w-full mx-auto overflow-x-hidden font-[family-name:var(--font-geist-sans)]">
      
