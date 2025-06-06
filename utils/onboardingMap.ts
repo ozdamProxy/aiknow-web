@@ -1,4 +1,3 @@
-
 import Focus from "@/components/onboarding/Focus";
 import Onboarding5 from "@/components/onboarding/Onboarding5";
 import Onboarding6 from "@/components/onboarding/Onboarding6";
@@ -32,7 +31,7 @@ const componentsMap: Record<string, StepInfo> = {
   "2": {
     component: Option,
     title: "What is your focus right now?",
-    options: ["practice self-discipline & consistency", "develop my career skills", "broaden my knowledge","understand myself & others better","I don't relate to any of these"],
+    options: ["Practice self-discipline & consistency", "Develop my career skills", "Broaden my knowledge", "Understand myself & others better", "I don't relate to any of these"],
     type:"About you"
   },
   "3": {
@@ -44,7 +43,7 @@ const componentsMap: Record<string, StepInfo> = {
   "4": {
     component: Option,
     title: "What's your age?",
-    options: ["18-24", "25-34", "35-44","45-54","55+"],
+    options: ["18 - 24", "25 - 34", "35 - 44", "45 - 54", "55+"],
     type:"About you"
   },
   "5": {

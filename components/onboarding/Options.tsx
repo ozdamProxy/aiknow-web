@@ -24,16 +24,16 @@ const Options:React.FC<OptionProps> = ({title,options,step,type}) => {
   const handleOptionClick = (option: string) => {
     
    if(step=="2"){
-     mixpanel.track('ob_focus_selected', {
+     mixpanel.track('ob_focus', {
       focus_option: option,
     });
    }else if(step=="3"){
-     mixpanel.track('ob_gender_selected', {
+     mixpanel.track('ob_gender', {
       gender_option: option,
     });
    }else if(step=="4"){
      mixpanel.track('ob_age', {
-      age_group: option,
+      age_option: option,
     })}
     else if(step=="12"){
      mixpanel.track('ob_commit', {
@@ -66,7 +66,7 @@ const Options:React.FC<OptionProps> = ({title,options,step,type}) => {
           <p className="text-[14px] lg:text-[20px]  min-w-[300px] text-black font-normal text-center mb-[10px] lg:min-w-[430px] px-[15px] py-[10px] bg-[#FEBE5826] rounded-[30px] border border-[#FEBE58]">
           {step === "9"
             ? "What habit you want to create?" 
-            : "We’ll help you develop it with our features"
+            : "We'll help you develop it with our features"
             }
 
           </p>
